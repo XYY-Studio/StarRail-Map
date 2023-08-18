@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3 uid="uid://xq2jtinayfb2"]
+
+[ext_resource type="Texture2D" uid="uid://cqcoi1up3yhuc" path="res://Resource/img/ico/101.png" id="1_1jelb"]
+[ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="1_b7m45"]
+[ext_resource type="Script" path="res://src/Script/ui/ui.gd" id="1_nrkoc"]
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_nrkoc")
+metadata/_edit_vertical_guides_ = [1585.0]
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -335.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = 234.0
+offset_right = -2.0
+offset_bottom = -786.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="WorldSelectBox" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/WorldSelectBox"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 69.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "{lbl_select_world}"
+
+[node name="WorldSelect" type="OptionButton" parent="Panel/VBoxContainer/WorldSelectBox"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+grow_horizontal = 0
+grow_vertical = 2
+item_count = 4
+popup/item_0/text = "{world_100}"
+popup/item_0/id = 100
+popup/item_0/disabled = true
+popup/item_1/text = "{world_101}"
+popup/item_1/id = 101
+popup/item_1/disabled = true
+popup/item_2/text = "{world_201}"
+popup/item_2/id = 201
+popup/item_2/disabled = true
+popup/item_3/text = "{world_301}"
+popup/item_3/id = 301
+popup/item_3/disabled = true
+
+[node name="MapSelectBox" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="MapSelect" type="OptionButton" parent="Panel/VBoxContainer/MapSelectBox"]
+layout_mode = 2
+offset_right = 294.0
+offset_bottom = 20.0
+
+[node name="BtnHolo" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 172.0
+offset_right = 331.0
+offset_bottom = 200.0
+text = "{btn_holo}"
+icon = ExtResource("1_b7m45")
+icon_alignment = 2
+
+[node name="MapTitle" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 48.0
+offset_right = 250.0
+offset_bottom = 112.0
+scale = Vector2(1.3, 1.3)
+
+[node name="TextureRect" type="TextureRect" parent="MapTitle"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 64.0
+grow_vertical = 2
+texture = ExtResource("1_1jelb")
+
+[node name="LblMap" type="Label" parent="MapTitle"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+offset_left = 71.5
+offset_top = 12.0
+offset_right = 147.5
+offset_bottom = 35.0
+text = "{lbl_map}"
+
+[node name="LblWorld" type="Label" parent="MapTitle"]
+modulate = Color(0.333333, 0.333333, 0.333333, 1)
+layout_mode = 1
+offset_left = 71.5
+offset_top = 38.0
+offset_right = 158.5
+offset_bottom = 61.0
+scale = Vector2(0.8, 0.8)
+text = "{lbl_world}"
+
+[connection signal="item_selected" from="Panel/VBoxContainer/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
+[connection signal="item_selected" from="Panel/VBoxContainer/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]

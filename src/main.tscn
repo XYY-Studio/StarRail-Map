@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt2ti3xb18myw"]
+
+[ext_resource type="Script" path="res://src/Script/main.gd" id="1_8nd6n"]
+[ext_resource type="PackedScene" uid="uid://xq2jtinayfb2" path="res://src/ui/ui.tscn" id="1_731ss"]
+[ext_resource type="PackedScene" uid="uid://bqblgs7qy1kb1" path="res://src/ui/Debug_ui.tscn" id="3_8g7ee"]
+[ext_resource type="Script" path="res://src/Script/System/Camera.gd" id="4_iv3h6"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8nd6n")
+
+[node name="Ui" parent="." instance=ExtResource("1_731ss")]
+
+[node name="Debug_ui" parent="." instance=ExtResource("3_8g7ee")]
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("4_iv3h6")
+
+[node name="Timer" type="Timer" parent="Camera"]
+one_shot = true
+
+[node name="Point" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Map" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Camera/Timer" to="Camera" method="_on_timer_timeout"]
