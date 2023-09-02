@@ -8,8 +8,8 @@ Made with ***Godot 4.1***
 **It's just a map at this stage**
 
 ## TODO
-[x] Base map  
-[ ] point  
-[ ] Point mark  
-[ ] Check for updates  
-[ ] Hot update  
+- [x] Base map  
+- [ ] point  
+- [ ] Point mark  
+- [ ] Check for updates  
+- [ ] Hot update  
