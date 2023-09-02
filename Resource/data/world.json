@@ -1,22 +1,22 @@
 {
-    "version": 1.2,
-    "World": [
-        "100",
-        "101",
-        "201",
-        "301"
-    ],
+	"version": "1.0",
+	"world": [
+		"100",
+		"101",
+		"201",
+		"301"
+	],
 
-    "100": {
-        "enable": false
-    },
-    "101": {
-        "enable": true
-    },
-    "201": {
-        "enable": true
-    },
-    "301": {
-        "enable": true
-    }
+	"100": {
+		"enable": false
+	},
+	"101": {
+		"enable": true
+	},
+	"201": {
+		"enable": true
+	},
+	"301": {
+		"enable": true
+	}
 }

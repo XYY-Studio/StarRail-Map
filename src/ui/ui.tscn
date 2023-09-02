@@ -10,24 +10,23 @@ metadata/_edit_vertical_guides_ = [1585.0]
 
 [node name="Panel" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 11
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -335.0
+offset_bottom = 262.0
 grow_horizontal = 0
-grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 11
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -296.0
-offset_top = 234.0
-offset_right = -2.0
-offset_bottom = -786.0
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -46.0
+offset_bottom = 46.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -75,16 +74,33 @@ custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
 [node name="MapSelect" type="OptionButton" parent="Panel/VBoxContainer/MapSelectBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FloorSelectBox" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
-offset_right = 294.0
-offset_bottom = 20.0
+
+[node name="FloorSelect" type="OptionButton" parent="Panel/VBoxContainer/FloorSelectBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BtnHolo" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 172.0
-offset_right = 331.0
-offset_bottom = 200.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_bottom = 28.0
+grow_horizontal = 0
 text = "{btn_holo}"
 icon = ExtResource("1_b7m45")
 icon_alignment = 2
@@ -127,3 +143,4 @@ text = "{lbl_world}"
 
 [connection signal="item_selected" from="Panel/VBoxContainer/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
 [connection signal="item_selected" from="Panel/VBoxContainer/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]
+[connection signal="item_selected" from="Panel/VBoxContainer/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]

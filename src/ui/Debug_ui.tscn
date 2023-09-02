@@ -38,10 +38,14 @@ text = "CameraPostion:"
 layout_mode = 2
 text = "CameraZoom:"
 
+[node name="world and map" type="Label" parent="LblBox"]
+layout_mode = 2
+text = "NowWorld|Map: "
+
 [node name="HBoxContainer" type="HBoxContainer" parent="LblBox"]
 layout_mode = 2
 
-[node name="index" type="LineEdit" parent="LblBox/HBoxContainer"]
+[node name="indexInput" type="LineEdit" parent="LblBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "index"
@@ -54,6 +58,17 @@ text = "disable"
 layout_mode = 2
 text = "enable"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="LblBox"]
+layout_mode = 2
+
+[node name="ShowFloor" type="Button" parent="LblBox/HBoxContainer2"]
+layout_mode = 2
+text = "Show Floor Select"
+
+[node name="HideFloor" type="Button" parent="LblBox/HBoxContainer2"]
+layout_mode = 2
+text = "Hide Floor Select"
+
 [node name="Lbldebug" type="Label" parent="LblBox"]
 layout_mode = 2
 size_flags_vertical = 10
@@ -61,3 +76,5 @@ text = "DEBUG"
 
 [connection signal="pressed" from="LblBox/HBoxContainer/disable" to="." method="_on_disable_pressed"]
 [connection signal="pressed" from="LblBox/HBoxContainer/enable" to="." method="_on_enable_pressed"]
+[connection signal="pressed" from="LblBox/HBoxContainer2/ShowFloor" to="." method="_on_show_floor_pressed"]
+[connection signal="pressed" from="LblBox/HBoxContainer2/HideFloor" to="." method="_on_hide_floor_pressed"]
