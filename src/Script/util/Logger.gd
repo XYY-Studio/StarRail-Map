@@ -23,6 +23,8 @@ const SCR_NAME: String = "Logger.gd"
 #	3 == Error
 #
 #	Version: 1.5
+#	by XYY
+#	https://github.com/Xyyaua/Godot-common-script
 #-------------------------
 #	配置 Config
 
