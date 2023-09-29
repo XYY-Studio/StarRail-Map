@@ -22,7 +22,7 @@ const SCR_NAME: String = "Logger.gd"
 #	2 == Waring
 #	3 == Error
 #
-#	Version: 1.5
+#	Version: 1.6
 #	by XYY
 #	https://github.com/Xyyaua/Godot-common-script
 #-------------------------
@@ -122,4 +122,4 @@ func output(scr: String, msg: String, level: int) -> void:
 		if level == 2 && ENABLE_WARNING == true:
 			print(time + '|' + levelText + '|' + scr + '|' + msg)
 		if level == 3 && ENABLE_ERROR == true:
-			print(time + '|' + levelText + '|' + scr + '|' + msg)
+			printerr(time + '|' + levelText + '|' + scr + '|' + msg)
