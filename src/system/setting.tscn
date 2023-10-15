@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://csq1sngfx33uw"]
+
+[node name="setting" type="Window"]
+title = "{window_etting}"
+position = Vector2i(0, 36)
+size = Vector2i(450, 250)
+always_on_top = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 410.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="{set_view}" type="Control" parent="Control/TabContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2

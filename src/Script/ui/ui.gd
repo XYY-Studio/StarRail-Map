@@ -92,3 +92,9 @@ func _on_map_select_item_selected(index) -> void:
 
 func _on_floor_select_item_selected(index) -> void:
 	MapManage.change_floor(str(index + 1))
+
+func _on_btn_setting_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_btn_holo_pressed() -> void:
+	pass # Replace with function body.

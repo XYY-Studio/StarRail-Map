@@ -93,13 +93,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="BtnSetting" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "{btn_setting}"
+
 [node name="BtnHolo" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -107.0
-offset_bottom = 28.0
+offset_top = 54.0
+offset_bottom = 82.0
 grow_horizontal = 0
 text = "{btn_holo}"
 icon = ExtResource("1_b7m45")
@@ -144,3 +155,5 @@ text = "{lbl_world}"
 [connection signal="item_selected" from="Panel/VBoxContainer/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
 [connection signal="item_selected" from="Panel/VBoxContainer/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]
 [connection signal="item_selected" from="Panel/VBoxContainer/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]
+[connection signal="pressed" from="Panel/BtnSetting" to="." method="_on_btn_setting_pressed"]
+[connection signal="pressed" from="Panel/BtnHolo" to="." method="_on_btn_holo_pressed"]

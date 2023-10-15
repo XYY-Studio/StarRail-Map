@@ -39,8 +39,6 @@ func change_world(world_id: int) -> void:
 var now_map_data
 
 func change_map(map_id: int) -> void:
-
-	
 	Global.now_map = map_id
 	Logger.output(SCR_NAME, "change to map: " + str(map_id), 1)
 	now_map_data = map_json_data[str(Global.now_world)][str(map_id)]
