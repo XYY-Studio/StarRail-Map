@@ -13,6 +13,10 @@ func _ready() -> void:
 	
 	MapManage.change_world(101)
 	
+	if OS.is_debug_build():
+		$Debug_ui.show()
+	else:
+		$Debug_ui.hide()
 
 func _process(delta) -> void:
 	Global.mouse_pos = get_global_mouse_position()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt2ti3xb18myw"]
+[gd_scene load_steps=7 format=3 uid="uid://bt2ti3xb18myw"]
 
 [ext_resource type="Script" path="res://src/Script/main.gd" id="1_8nd6n"]
 [ext_resource type="PackedScene" uid="uid://xq2jtinayfb2" path="res://src/ui/ui.tscn" id="1_731ss"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://src/Script/System/Camera.gd" id="4_iv3h6"]
 [ext_resource type="Script" path="res://src/Script/System/Http.gd" id="5_5hnio"]
 [ext_resource type="Script" path="res://src/Script/map/PointManage.gd" id="5_gg3e5"]
-[ext_resource type="Texture2D" uid="uid://jcicos4lrcxs" path="res://Resource/img/map/301/30106.png" id="6_tqt7y"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8nd6n")
@@ -33,7 +32,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_tqt7y")
 
 [node name="UpdataRequest" type="HTTPRequest" parent="."]
 timeout = 15.0
