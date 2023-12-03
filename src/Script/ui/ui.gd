@@ -78,6 +78,13 @@ func clear_floor_option() -> void:
 	floor_select.clear()
 
 #------------------------
+#	Transitions
+
+@onready var anim = $AnimationPlayer
+func anim_play(name: String) -> void:
+	anim.play(name)
+
+#------------------------
 #	Signal
 
 func _on_world_select_item_selected(index) -> void:
