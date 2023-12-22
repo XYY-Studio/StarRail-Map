@@ -24,6 +24,7 @@
 		},
 		"10103": {
 			"multiFloor": true,
+			"defaultCameraZoom": 1.6,
 			"floorTemplate": "2",
 			"defaultFloor": "1",
 			"floor": {
@@ -34,6 +35,7 @@
 		},
 		"10104": {
 			"multiFloor": true,
+			"defaultCameraZoom": 1.6,
 			"floorTemplate": "0",
 			"defaultFloor": "2",
 			"floor": {
@@ -46,6 +48,7 @@
 		"map": [20101, 20102, 20103, 20104, 20105, 20106, 20107, 20108, 20109, 20110, 20111, 20112],
 		"20101": {
 			"multiFloor": true,
+			"defaultCameraZoom": 0.8,
 			"floorTemplate": "1",
 			"defaultFloor": "1",
 			"floor": {
@@ -54,7 +57,8 @@
 			}
 		},
 		"20102": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.4
 		},
 		"20103": {
 			"multiFloor": false
@@ -63,19 +67,24 @@
 			"multiFloor": false
 		},
 		"20105": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 0.8
 		},
 		"20106": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.6
 		},
 		"20107": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.2
 		},
 		"20108": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.2
 		},
 		"20109": {
 			"multiFloor": true,
+			"defaultCameraZoom": 1.4,
 			"floorTemplate": "0",
 			"defaultFloor": "1",
 			"floor": {
@@ -85,6 +94,7 @@
 		},
 		"20110": {
 			"multiFloor": true,
+			"defaultCameraZoom": 1.2,
 			"floorTemplate": "0",
 			"defaultFloor": "2",
 			"floor": {
@@ -97,6 +107,7 @@
 		},
 		"20112": {
 			"multiFloor": true,
+			"defaultCameraZoom": 0.6,
 			"floorTemplate": "0",
 			"defaultFloor": "2",
 			"floor": {
@@ -108,10 +119,12 @@
 	"301": {
 		"map": [30101, 30102, 30103, 30104, 30105, 30106, 30107, 30108, 30109],
 		"30101": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.2
 		},
 		"30102": {
 			"multiFloor": true,
+			"defaultCameraZoom": 0.8,
 			"floorTemplate": "0",
 			"defaultFloor": "1",
 			"floor": {
@@ -123,7 +136,8 @@
 			"multiFloor": false
 		},
 		"30104": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.6
 		},
 		"30105": {
 			"multiFloor": true,
@@ -135,16 +149,19 @@
 			}
 		},
 		"30106": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 0.8
 		},
 		"30107": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 0.8
 		},
 		"30108": {
 			"multiFloor": false
 		},
 		"30109": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 1.4
 		}
 	}
 }
