@@ -69,8 +69,15 @@ func change_map(map_id: int) -> void:
 		ui.show_floor(false)
 		set_map_texture(map_id)
 	
+	if now_map_data.get("defaultCameraZoom") != null:
+		$"/root/Main/Camera".set_camera_zoom(now_map_data["defaultCameraZoom"])
+		print(now_map_data["defaultCameraZoom"])
+	else :
+		$"/root/Main/Camera".camera_init()
+		print("No find def cam zoom")
+	
 	ui.change_map(map_id)
-	$"/root/Main/Camera".camera_init()
+	
 
 #------------------------
 #	Floor

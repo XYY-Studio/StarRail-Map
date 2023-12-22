@@ -29,6 +29,14 @@ func zoom_in() -> void:
 func zoom_out() -> void:
 	_zoom = max(_zoom - zoom_value, zoom_min)
 
+func set_camera_zoom(value: float) -> void:
+	if value >= zoom_min && value <= zoom_max:
+		_zoom = value
+	elif value < zoom_min:
+		_zoom = zoom_min
+	elif value > zoom_max:
+		_zoom = zoom_max
+
 func camera_init() -> void:
 	position = Vector2.ZERO
 	_zoom = 1.0
