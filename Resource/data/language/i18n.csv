@@ -1,6 +1,8 @@
 key,en,zh
 {resolution},Resolution,分辨率
 {apply},Apply,应用
+{set_general},General,通用
+{set_view},View,视频
 {btn_setting},Setting,设置
 {btn_world_select},Select world,选择世界
 {btn_map_select},Select map,选择地图

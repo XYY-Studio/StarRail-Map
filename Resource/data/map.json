@@ -176,7 +176,8 @@
 			"defaultCameraZoom": 1.4
 		},
 		"30110": {
-			"multiFloor": false
+			"multiFloor": false,
+			"defaultCameraZoom": 0.6
 		}
 	}
 }

@@ -39,7 +39,7 @@ func change_world(world_id: int) -> void:
 var now_map_data
 
 func change_map(map_id: int) -> void:
-	$"/root/Main/Ui".anim_play("change_map")
+	#$"/root/Main/Ui".anim_play("change_map")
 	
 	Global.now_map = map_id
 	Logger.output(SCR_NAME, "change to map: " + str(map_id), 1)
@@ -56,7 +56,6 @@ func change_map(map_id: int) -> void:
 				Global.floor_type = 0
 				change_floor(map_default_floor)
 				ui.change_floor_option(int(map_default_floor) - 1)
-				return
 			"1":
 				ui.set_floor_option(1)
 				Global.floor_type = 1
@@ -110,5 +109,6 @@ func get_map_list(world_id) -> Array:
 
 @onready var maptexture = $"/root/Main/Map"
 func set_map_texture(map_id):
-	var world_path: String = "res://Resource/img/map/%s/" %Global.now_world
-	maptexture.set_texture(load(world_path + "%s.png" %map_id))
+	#var world_path: String = "res://Resource/img/map/%s/" %Global.now_world
+	#maptexture.set_texture(load(world_path + "%s.png" %map_id))
+	maptexture.set_texture(load("res://Resource/img/map/%s/%s.png" %[Global.now_world, map_id]))
