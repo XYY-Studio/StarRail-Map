@@ -19,6 +19,14 @@ func _process(delta) -> void:
 	Global.camera_pos = $Camera.position
 	Global.camera_zoom = $Camera.zoom
 
+func show_setting_window(value: bool) -> void:
+	if value == $Setting.visible:
+		if value == true:
+			$Setting.set_visible(false)
+	else:
+		$Setting.set_visible(value)
+
+
 #------------------------
 #	帧数限制 Frame limit (TODO…)
 #

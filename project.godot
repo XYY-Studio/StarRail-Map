@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://src/Script/System/Global.gd"
+Global="*res://src/Script/system/Global.gd"
 Logger="*res://src/Script/util/Logger.gd"
 Util="*res://src/Script/util/Util.gd"
 MapManage="*res://src/Script/map/MapManage.gd"
@@ -32,6 +32,7 @@ window/size/window_width_override=1600
 window/size/window_height_override=900
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
 
 [gui]
 
