@@ -69,6 +69,10 @@ func set_floor_option(floor_type: int) -> void:
 			floor_select.add_item("B1", 1)
 			floor_select.add_item("F1", 2)
 			floor_select.add_item("F2", 3)
+		3:
+			floor_select.add_item("F1", 1)
+			floor_select.add_item("F2", 2)
+			floor_select.add_item("F3", 3)
 	return
 
 func change_floor_option(index: int) -> void:
@@ -94,7 +98,10 @@ func _on_floor_select_item_selected(index) -> void:
 	MapManage.change_floor(str(index + 1))
 
 func _on_btn_setting_pressed() -> void:
-	pass # Replace with function body.
+	$"/root/Main".show_setting_window(true)
 
 func _on_btn_holo_pressed() -> void:
 	pass # Replace with function body.
+
+func _on_btn_exit_pressed() -> void:
+	get_tree().quit()

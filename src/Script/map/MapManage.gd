@@ -60,12 +60,18 @@ func change_map(map_id: int) -> void:
 				ui.set_floor_option(1)
 				Global.floor_type = 1
 				change_floor(str(int(map_default_floor) + 1))
+				ui.change_floor_option(int(map_default_floor))
 			"2":
 				ui.set_floor_option(2)
 				Global.floor_type = 2
 				change_floor(str(int(map_default_floor) + 1))
-		
-		ui.change_floor_option(int(map_default_floor))
+				ui.change_floor_option(int(map_default_floor))
+			"3":
+				ui.set_floor_option(3)
+				Global.floor_type = 3
+				change_floor(str(int(map_default_floor)))
+				ui.change_floor_option(int(map_default_floor) - 1)
+			
 	else:
 		ui.show_floor(false)
 		set_map_texture(map_id)
