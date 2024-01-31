@@ -1,5 +1,5 @@
 extends Node2D
-const Version = "005"
+const Version = "0.0.5"
 
 @onready var Ui = $"/root/Main/Ui"
 
