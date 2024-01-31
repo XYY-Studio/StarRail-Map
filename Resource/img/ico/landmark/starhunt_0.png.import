@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0faldc2hk31d"
-path="res://.godot/imported/20101_1.png-16794dc51a720360d786f92dc1b08f04.ctex"
+uid="uid://bla5n3o5yxwt2"
+path="res://.godot/imported/starhunt_0.png-30eb0acedecd3f9ccd7700535d99a890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/map/201/20101_1.png"
-dest_files=["res://.godot/imported/20101_1.png-16794dc51a720360d786f92dc1b08f04.ctex"]
+source_file="res://Resource/img/ico/landmark/starhunt_0.png"
+dest_files=["res://.godot/imported/starhunt_0.png-30eb0acedecd3f9ccd7700535d99a890.ctex"]
 
 [params]
 

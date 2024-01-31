@@ -1,18 +1,18 @@
 extends Node2D
-const SCR_NAME: String = "main.gd"
+const Version = "005"
+
+@onready var Ui = $"/root/Main/Ui"
 
 func _ready() -> void:
-	#为了方便所以在这里添加地图
-	$Ui.clear_world_option()
-	for i in MapManage.world_data:
-		var enable = MapManage.cheak_world(i)
-		if enable == true:
-			$Ui.add_world_option(i, true)
-		else:
-			$Ui.add_world_option(i, false)
-	
-	MapManage.change_world(101)
-	
+	initial_app()
+
+func initial_app() -> void:
+	Global.change_to_world(101)
+	Global.change_to_map(10101)
+	Ui.clear_world_option()
+	for i in Global.world_json_data["world"]:
+		Ui.add_world_option(i["id"], i["enable"])
+	Ui.change_world(101)
 
 func _process(delta) -> void:
 	Global.mouse_pos = get_global_mouse_position()

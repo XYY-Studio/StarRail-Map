@@ -1,5 +1,4 @@
 extends CanvasLayer
-const SCR_NAME: String = "debug_ui.gd"
 
 var mouse_pos
 var camera_pos
@@ -32,12 +31,12 @@ func updata() -> void:
 func _on_disable_pressed():
 	index = $LblBox/HBoxContainer/indexInput.text
 	world_select.set_item_disabled(int(index), true)
-	Logger.output(SCR_NAME, "Disable index: " + index, 0)
+	print("Disable index: " + index)
 
 func _on_enable_pressed():
 	index = $LblBox/HBoxContainer/indexInput.text
 	world_select.set_item_disabled(int(index), false)
-	Logger.output(SCR_NAME, "Enable index: " + index, 0)
+	print("Enable index: " + index)
 
 func _on_show_floor_pressed():
 	$"../Ui".show_floor(true)

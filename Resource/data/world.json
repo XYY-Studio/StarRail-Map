@@ -1,5 +1,5 @@
 {
-	"version": "110",
+	"version": "111",
 	"world": [
 		{
 			"id": 100,
@@ -7,15 +7,18 @@
 		},
 		{
 			"id": 101,
-			"enable": true
+			"enable": true,
+			"logo_path": "res://Resource/img/ico/world/101.png"
 		},
 		{
 			"id": 201,
-			"enable": true
+			"enable": true,
+			"logo_path": "res://Resource/img/ico/world/201.png"
 		},
 		{
 			"id": 301,
-			"enable": true
+			"enable": true,
+			"logo_path": "res://Resource/img/ico/world/301.png"
 		}
 	]
 }

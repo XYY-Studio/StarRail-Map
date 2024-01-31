@@ -1,6 +1,5 @@
 #From https://youtu.be/gpvLqLggJuk
 extends Camera2D
-const SCR_NAME: String = "Camera.gd"
 
 var _zoom: float = 1.0
 var zoom_value: float = 0.2

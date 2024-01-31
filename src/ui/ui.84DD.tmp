@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xq2jtinayfb2"]
 
-[ext_resource type="Texture2D" uid="uid://cqcoi1up3yhuc" path="res://Resource/img/ico/world/101.png" id="1_1jelb"]
+[ext_resource type="Texture2D" uid="uid://cqcoi1up3yhuc" path="res://Resource/img/ico/101.png" id="1_1jelb"]
 [ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="1_b7m45"]
 [ext_resource type="Script" path="res://src/Script/ui/ui.gd" id="1_nrkoc"]
 
@@ -14,20 +14,21 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -335.0
-offset_bottom = 207.0
+offset_bottom = 262.0
 grow_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -294.0
-offset_top = -92.0
+offset_top = -16.0
+offset_bottom = 76.0
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="WorldSelectBox" type="Control" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 28)
@@ -117,13 +118,10 @@ icon = ExtResource("1_b7m45")
 icon_alignment = 2
 
 [node name="BtnExit" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -85.0
+layout_mode = 0
+offset_left = 250.0
+offset_right = 335.0
 offset_bottom = 28.0
-grow_horizontal = 0
 text = "{btn_exit}"
 
 [node name="MapTitle" type="Control" parent="."]

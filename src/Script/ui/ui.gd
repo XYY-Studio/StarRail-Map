@@ -1,8 +1,8 @@
 extends CanvasLayer
-const SCR_NAME: String = "ui.gd"
 
 @onready var world_option = $Panel/VBoxContainer/WorldSelectBox/WorldSelect
 @onready var map_option = $Panel/VBoxContainer/MapSelectBox/MapSelect
+@onready var floor_option = $Panel/VBoxContainer/FloorSelectBox/FloorSelect
 
 #------------------------
 #	World
@@ -10,76 +10,74 @@ const SCR_NAME: String = "ui.gd"
 #清空世界选项
 func clear_world_option() -> void:
 	world_option.clear()
-	world_index = -1
-	Logger.output(SCR_NAME, "Clear all world option!", 0)
 
-var world_option_text: String = "{world_%s}"
-var world_index: int = -1
 func add_world_option(world_id, enable: bool) -> void:
-	# world_id 是字符串
-	world_option.add_item(world_option_text %world_id, int(world_id))
-	world_index += 1
-	Logger.output(SCR_NAME, "add world index: " + str(world_index), 0)
-	if enable == false:
-		world_option.set_item_disabled(world_index, true)
-		Logger.output(SCR_NAME, "disable: " + str(world_index), 0)
+	world_option.add_item("{world_%s}" %world_id, int(world_id))
+	if not enable:
+		world_option.set_item_disabled(
+			world_option.get_item_index(int(world_id)),
+			true
+		)
 
 func change_world(world_id) -> void:
-	world_option.select(world_option.get_item_index(world_id))
+	clear_map_option()
+	Global.change_to_world(world_id)
+	for i in Global.map_json_data[str(world_id)]:
+		add_map_option(i["id"])
 	
-	map_option.clear()
-	map_index = -1
-	var map_list = MapManage.get_map_list(world_id)
-	for i in map_list:
-		add_map_option(i)
+	$MapTitle/LblWorld.text = "{world_%s}" %world_id
+	var ico_file
+	for i in Global.world_json_data["world"]:
+		if i["id"] == world_id:
+			ico_file = i["logo_path"]
+			break
+	if ico_file != null:
+		$MapTitle/TextureRect.set_texture(load(ico_file))
+	else:
+		print("World %s have no Logo." %str(world_id))
 	
-	$MapTitle/LblWorld.text = world_option_text %world_id
-	var texture_world = $MapTitle/TextureRect
-	texture_world.set_texture(load("res://Resource/img/ico/%s.png" %world_id))
+	change_map(int(Global.map_json_data[str(world_id)][0]["id"]))
 
 #------------------------
 #	Map
 
-var map_option_text = "{map_%s}"
-var map_index: int = -1
-func add_map_option(map_id: int) -> void:
-	map_index += 1
-	map_option.add_item(map_option_text %map_id, map_id)
+func clear_map_option() -> void:
+	map_option.clear()
+
+func add_map_option(map_id: String) -> void:
+	map_option.add_item("{map_%s}" %map_id, int(map_id))
 
 func change_map(map_id: int) -> void:
-	$MapTitle/LblMap.text = map_option_text %map_id
+	$MapTitle/LblMap.text = "{map_%s}" %map_id
+	clear_floor_option()
+	Global.change_to_map(map_id)
+	var mut_f = Global.current_map_data["multiFloor"]
+	show_floor(mut_f)
+	if mut_f:
+		set_floor_option(Global.current_map_data["floorTemplate"])
+		change_floor_option(Global.current_map_data["defaultFloor"])
 
 #------------------------
 #	Floor
 
-@onready var floor_select = $Panel/VBoxContainer/FloorSelectBox/FloorSelect
 func show_floor(enable: bool) -> void:
-	floor_select.visible = enable
+	$Panel/VBoxContainer/FloorSelectBox/FloorSelect.set_visible(enable)
 
-func set_floor_option(floor_type: int) -> void:
-	floor_select.clear()
-	match floor_type:
-		0:
-			floor_select.add_item("F1", 1)
-			floor_select.add_item("F2", 2)
-		1:
-			floor_select.add_item("B1", 1)
-			floor_select.add_item("F1", 2)
-		2:
-			floor_select.add_item("B1", 1)
-			floor_select.add_item("F1", 2)
-			floor_select.add_item("F2", 3)
-		3:
-			floor_select.add_item("F1", 1)
-			floor_select.add_item("F2", 2)
-			floor_select.add_item("F3", 3)
-	return
+func set_floor_option(floor_type: String) -> void:
+	for i in Global.map_json_data["floorTemplate"][floor_type]:
+		floor_option.add_item("{floor_%s}" %i)
 
-func change_floor_option(index: int) -> void:
-	floor_select.select(index)
+func change_floor_option(index) -> void:
+	var num = 0
+	for i in Global.current_map_data["floor"]:
+		if i == index:
+			MapManage.change_to_floor(str(index))
+			floor_option.select(num)
+			break
+		num += 1
 
 func clear_floor_option() -> void:
-	floor_select.clear()
+	floor_option.clear()
 
 #------------------------
 #	Signal
@@ -87,15 +85,16 @@ func clear_floor_option() -> void:
 func _on_world_select_item_selected(index) -> void:
 	var id = world_option.get_item_id(index)
 	change_world(id)
-	MapManage.change_world(id)
 
 func _on_map_select_item_selected(index) -> void:
 	var id = map_option.get_item_id(index)
 	change_map(id)
-	MapManage.change_map(id)
 
 func _on_floor_select_item_selected(index) -> void:
-	MapManage.change_floor(str(index + 1))
+	if not Global.current_map_data["floor"].has("0"):
+		MapManage.change_to_floor(str(index + 1))
+	else:
+		MapManage.change_to_floor(str(index))
 
 func _on_btn_setting_pressed() -> void:
 	$"/root/Main".show_setting_window(true)

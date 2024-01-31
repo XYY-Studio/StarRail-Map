@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdogvi2pncwrt"
-path="res://.godot/imported/2013.png-46cf8f37bb94c62e5a9ac56070bfc38d.ctex"
+uid="uid://cwjf31vosn63w"
+path="res://.godot/imported/201.png-31cb8a90b0c656e95720219c1625a68e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/item/2013.png"
-dest_files=["res://.godot/imported/2013.png-46cf8f37bb94c62e5a9ac56070bfc38d.ctex"]
+source_file="res://Resource/img/ico/world/201.png"
+dest_files=["res://.godot/imported/201.png-31cb8a90b0c656e95720219c1625a68e.ctex"]
 
 [params]
 
