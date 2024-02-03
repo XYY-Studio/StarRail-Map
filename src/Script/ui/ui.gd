@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var map_option = $Panel/MapControl/MapSelectBox/MapSelect
 @onready var floor_option = $Panel/MapControl/FloorSelectBox/FloorSelect
 @onready var anim_player = $Panel/AnimationPlayer
+@onready var trans_bg = $ColorRect
 
 #------------------------
 #	World
@@ -49,6 +50,11 @@ func add_map_option(map_id: String) -> void:
 	map_option.add_item("{map_%s}" %map_id, int(map_id))
 
 func change_map(map_id: int) -> void:
+	#Transitions
+	var tween := create_tween()
+	tween.tween_property(trans_bg, "color:a", 1, 0.1)
+	await tween.finished
+	
 	$MapTitle/LblMap.text = "{map_%s}" %map_id
 	clear_floor_option()
 	Global.change_to_map(map_id)
@@ -57,7 +63,10 @@ func change_map(map_id: int) -> void:
 	if mut_f:
 		set_floor_option(Global.current_map_data["floorTemplate"])
 		change_floor_option(Global.current_map_data["defaultFloor"])
-
+	
+	tween = create_tween()
+	tween.tween_property(trans_bg, "color:a", 0, 0.1)
+	
 #------------------------
 #	Floor
 
