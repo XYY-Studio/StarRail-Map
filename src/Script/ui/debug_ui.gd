@@ -27,7 +27,7 @@ func updata() -> void:
 	lbl_world_and_map.text = text_world_and_map.format([str(Global.now_world), str(Global.now_map)])
 
 @onready var index = $LblBox/HBoxContainer/indexInput.text
-@onready var world_select = $"../Ui/Panel/VBoxContainer/WorldSelectBox/WorldSelect"
+@onready var world_select = $"../Ui/Panel/MapControl/WorldSelectBox/WorldSelect"
 func _on_disable_pressed():
 	index = $LblBox/HBoxContainer/indexInput.text
 	world_select.set_item_disabled(int(index), true)

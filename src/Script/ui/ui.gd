@@ -1,8 +1,9 @@
 extends CanvasLayer
 
-@onready var world_option = $Panel/VBoxContainer/WorldSelectBox/WorldSelect
-@onready var map_option = $Panel/VBoxContainer/MapSelectBox/MapSelect
-@onready var floor_option = $Panel/VBoxContainer/FloorSelectBox/FloorSelect
+@onready var world_option = $Panel/MapControl/WorldSelectBox/WorldSelect
+@onready var map_option = $Panel/MapControl/MapSelectBox/MapSelect
+@onready var floor_option = $Panel/MapControl/FloorSelectBox/FloorSelect
+@onready var anim_player = $Panel/AnimationPlayer
 
 #------------------------
 #	World
@@ -61,7 +62,12 @@ func change_map(map_id: int) -> void:
 #	Floor
 
 func show_floor(enable: bool) -> void:
-	$Panel/VBoxContainer/FloorSelectBox/FloorSelect.set_visible(enable)
+	if enable == true && floor_option.visible == false:
+		anim_player.play("show_floor")
+	elif enable == false && floor_option.visible == true:
+		anim_player.play("hide_floor")
+	
+	floor_option.set_visible(enable)
 
 func set_floor_option(floor_type: String) -> void:
 	for i in Global.map_json_data["floorTemplate"][floor_type]:

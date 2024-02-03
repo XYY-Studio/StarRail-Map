@@ -1,39 +1,136 @@
-[gd_scene load_steps=4 format=3 uid="uid://xq2jtinayfb2"]
+[gd_scene load_steps=9 format=3 uid="uid://xq2jtinayfb2"]
 
 [ext_resource type="Texture2D" uid="uid://cqcoi1up3yhuc" path="res://Resource/img/ico/world/101.png" id="1_1jelb"]
 [ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="1_b7m45"]
 [ext_resource type="Script" path="res://src/Script/ui/ui.gd" id="1_nrkoc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5niyo"]
+bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+corner_radius_top_left = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_6uow1"]
+resource_name = "show_floor"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(307, 180), Vector2(307, 216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MapControl/FloorSelectBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_haosb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(307, 216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MapControl/FloorSelectBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_odicp"]
+resource_name = "hide_floor"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(307, 216), Vector2(307, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MapControl/FloorSelectBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vp10"]
+_data = {
+"RESET": SubResource("Animation_haosb"),
+"hide_floor": SubResource("Animation_odicp"),
+"show_floor": SubResource("Animation_6uow1")
+}
+
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource("1_nrkoc")
-metadata/_edit_vertical_guides_ = [1585.0]
+metadata/_edit_vertical_guides_ = [1612.0]
 
-[node name="Panel" type="Control" parent="."]
-layout_mode = 3
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -335.0
-offset_bottom = 207.0
+offset_left = -307.0
+offset_bottom = 216.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5niyo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="MapControl" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -294.0
-offset_top = -92.0
+offset_left = -299.0
+offset_top = 114.0
+offset_right = -5.0
+offset_bottom = 206.0
 grow_horizontal = 0
-grow_vertical = 0
 
-[node name="WorldSelectBox" type="Control" parent="Panel/VBoxContainer"]
+[node name="WorldSelectBox" type="Control" parent="Panel/MapControl"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/WorldSelectBox"]
+[node name="Label" type="Label" parent="Panel/MapControl/WorldSelectBox"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 4
@@ -45,7 +142,7 @@ offset_bottom = 11.5
 grow_vertical = 2
 text = "{lbl_select_world}"
 
-[node name="WorldSelect" type="OptionButton" parent="Panel/VBoxContainer/WorldSelectBox"]
+[node name="WorldSelect" type="OptionButton" parent="Panel/MapControl/WorldSelectBox"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -68,11 +165,11 @@ popup/item_3/text = "{world_301}"
 popup/item_3/id = 301
 popup/item_3/disabled = true
 
-[node name="MapSelectBox" type="Control" parent="Panel/VBoxContainer"]
+[node name="MapSelectBox" type="Control" parent="Panel/MapControl"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="MapSelect" type="OptionButton" parent="Panel/VBoxContainer/MapSelectBox"]
+[node name="MapSelect" type="OptionButton" parent="Panel/MapControl/MapSelectBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,11 +177,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FloorSelectBox" type="Control" parent="Panel/VBoxContainer"]
+[node name="FloorSelectBox" type="Control" parent="Panel/MapControl"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="FloorSelect" type="OptionButton" parent="Panel/VBoxContainer/FloorSelectBox"]
+[node name="FloorSelect" type="OptionButton" parent="Panel/MapControl/FloorSelectBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,8 +194,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -109.0
+offset_left = -115.0
 offset_top = 51.0
+offset_right = -6.0
 offset_bottom = 79.0
 grow_horizontal = 0
 text = "{btn_setting}"
@@ -108,8 +206,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -109.0
+offset_left = -115.0
 offset_top = 83.0
+offset_right = -6.0
 offset_bottom = 111.0
 grow_horizontal = 0
 text = "{btn_holo}"
@@ -121,10 +220,30 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -85.0
-offset_bottom = 28.0
+offset_left = -91.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 34.0
 grow_horizontal = 0
 text = "{btn_exit}"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+"": SubResource("AnimationLibrary_6vp10")
+}
+
+[node name="PointPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="MapTitle" type="Control" parent="."]
 layout_mode = 3
@@ -162,9 +281,9 @@ offset_bottom = 61.0
 scale = Vector2(0.8, 0.8)
 text = "{lbl_world}"
 
-[connection signal="item_selected" from="Panel/VBoxContainer/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
-[connection signal="item_selected" from="Panel/VBoxContainer/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]
-[connection signal="item_selected" from="Panel/VBoxContainer/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]
+[connection signal="item_selected" from="Panel/MapControl/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
+[connection signal="item_selected" from="Panel/MapControl/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]
+[connection signal="item_selected" from="Panel/MapControl/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]
 [connection signal="pressed" from="Panel/BtnSetting" to="." method="_on_btn_setting_pressed"]
 [connection signal="pressed" from="Panel/BtnHolo" to="." method="_on_btn_holo_pressed"]
 [connection signal="pressed" from="Panel/BtnExit" to="." method="_on_btn_exit_pressed"]
