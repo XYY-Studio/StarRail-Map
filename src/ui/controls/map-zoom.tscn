@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4lm61o1tarkb"]
+
+[ext_resource type="Script" path="res://src/script/map-zoom.gd" id="1_gu3uy"]
+[ext_resource type="Texture2D" uid="uid://d4l01mrwvlp8t" path="res://resource/img/ui/map-zoom-out.svg" id="1_ruqtp"]
+[ext_resource type="Theme" uid="uid://d2thns4ydrrsh" path="res://resource/theme/sr_theme.tres" id="2_8b1j6"]
+[ext_resource type="Texture2D" uid="uid://b7s43dcbn6j0w" path="res://resource/img/ui/map-zoom-in.svg" id="3_arynp"]
+
+[node name="map-zoom" type="HBoxContainer"]
+offset_right = 145.0
+offset_bottom = 16.0
+alignment = 1
+script = ExtResource("1_gu3uy")
+
+[node name="zoom-out" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_ruqtp")
+
+[node name="zoom-slider" type="HSlider" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("2_8b1j6")
+value = 50.0
+
+[node name="zoom-in" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("3_arynp")
+
+[connection signal="pressed" from="zoom-out" to="." method="_on_zoomout_pressed"]
+[connection signal="value_changed" from="zoom-slider" to="." method="_on_zoomslider_value_changed"]
+[connection signal="pressed" from="zoom-in" to="." method="_on_zoomin_pressed"]

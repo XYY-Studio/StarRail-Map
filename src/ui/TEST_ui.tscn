@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://byjmqxqseo74h"]
+
+[ext_resource type="Script" path="res://src/script/ui.gd" id="1_0ebbk"]
+[ext_resource type="Theme" uid="uid://d2thns4ydrrsh" path="res://resource/theme/sr_theme.tres" id="2_dp8ne"]
+[ext_resource type="PackedScene" uid="uid://c4lm61o1tarkb" path="res://src/ui/controls/map-zoom.tscn" id="2_p2qfq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ginl7"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="TEST_ui" type="CanvasLayer"]
+script = ExtResource("1_0ebbk")
+
+[node name="TEST_Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "UITest"
+label_settings = SubResource("LabelSettings_ginl7")
+
+[node name="LblVBox" type="VBoxContainer" parent="."]
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 64.0
+
+[node name="CamPos" type="Label" parent="LblVBox"]
+layout_mode = 2
+theme = ExtResource("2_dp8ne")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -403.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_dp8ne")
+
+[node name="TEST_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "a Test Button"
+
+[node name="resolution_Lbl" type="Label" parent="VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "分辨率 Resolution"
+
+[node name="resolution_select" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600 x 900"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+
+[node name="resolution_confirm" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "应用"
+
+[node name="map-zoom" parent="VBoxContainer" instance=ExtResource("2_p2qfq")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/TEST_Button" to="." method="_on_test_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/resolution_select" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="VBoxContainer/resolution_confirm" to="." method="_on_resolution_confirm_pressed"]

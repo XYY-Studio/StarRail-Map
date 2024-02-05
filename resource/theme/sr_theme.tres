@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d2thns4ydrrsh"]
+
+[ext_resource type="Texture2D" uid="uid://c1fkqdqlcxu20" path="res://resource/img/ui/map-zoom-slider.svg" id="1_h4s4r"]
+[ext_resource type="StyleBox" uid="uid://cuvgh32gle68j" path="res://resource/theme/slider/Slider.stylebox" id="2_gj2nc"]
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_h4s4r")
+HSlider/icons/grabber_highlight = ExtResource("1_h4s4r")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = ExtResource("2_gj2nc")
+HSlider/styles/grabber_area_highlight = ExtResource("2_gj2nc")
+Label/colors/font_color = Color(0, 0, 0, 1)

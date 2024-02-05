@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='241' height='52' fill='none'>
+    <g opacity='.2'>
+        <circle cx='121' cy='49' r='2' fill='#fff'/>
+        <circle cx='97' cy='49' r='2' fill='#fff'/>
+        <circle cx='106' cy='49' r='3' fill='#fff'/>
+        <path stroke='url(#a)' d='M121 49h118'/>
+        <circle cx='35.5' cy='3' r='2.5' fill='#fff'/>
+        <circle cx='28' cy='3' r='2' fill='#fff'/>
+        <path stroke='#fff' d='M35 3H20C13.373 3 8 8.373 8 15v22c0 6.627 5.373 12 12 12h101'/>
+        <path stroke='url(#b)' d='M35.345 11H13C6.373 11 1 16.373 1 23v6c0 6.627 5.373 12 12 12h228' opacity='.4'/>
+    </g>
+    <defs>
+        <linearGradient id='a' x1='124' x2='239' y1='49.375' y2='48.875' gradientUnits='userSpaceOnUse'>
+            <stop stop-color='#fff'/>
+            <stop offset='1' stop-color='#fff' stop-opacity='0'/>
+        </linearGradient>
+        <linearGradient id='b' x1='0' x2='241' y1='24.5' y2='23' gradientUnits='userSpaceOnUse'>
+            <stop stop-color='#fff'/>
+            <stop offset='1' stop-color='#fff' stop-opacity='0'/>
+        </linearGradient>
+    </defs>
+</svg>

@@ -1,0 +1,33 @@
+key,en,zh
+{Test_btn},a Test Button,测试按钮
+{Resolution},Resolution,分辨率
+{Apply},Apply,应用
+{Select_World},Select world,选择世界
+{Select_Map},Select map,选择地图
+{Holo},Holographic Overview,全息总览
+{Map_100},Astral Express,星穹列车
+{Map_101},Herta Space Station,空间站「黑塔」
+{Map_201},Jarilo-VI,雅利洛-Ⅵ
+{Map_301},Xianzhou: The Luofu,仙舟「罗浮」
+{Map_10001},Parlor Car,观景车厢
+{Map_10002},Passenger Cabin,客房车厢
+{Map_10101},Master Control Zone,主控舱段
+{Map_10102},Base Zone,基座舱段
+{Map_10103},Storage Zone,收容舱段
+{Map_10104},Supply Zone,支援舱段
+{Map_20101},Administrative District,行政区
+{Map_20102},Outlying Snow Plains,城郊雪原
+{Map_20103},Backwater Pass,边缘通路
+{Map_20104},Silvermane Guard Restricted Zone,铁卫禁区
+{Map_20105},Corridor of Fading Echoes,残响回廊
+{Map_20106},Everwinter Hill,永冬岭
+{Map_20107},Boulder Town,磐岩镇
+{Map_20108},Great Mine,大矿区
+{Map_20109},Rivet Town,铆钉镇
+{Map_20110},Robot Settlement,机械聚落
+{Map_30101},Central Starskiff Haven,星槎海中枢
+{Map_30102},Cloudford,流云渡
+{Map_30103},Stargazer Navalia,迴星港
+{Map_30104},Exalting Sanctum,长乐天
+{Map_30105},Divination Commission,太卜司
+{Map_30106},Artisanship Commission,工造司

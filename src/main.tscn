@@ -1,0 +1,180 @@
+[gd_scene load_steps=10 format=3 uid="uid://ubmxjjf6ftud"]
+
+[ext_resource type="Script" path="res://src/script/main.gd" id="1_0we4w"]
+[ext_resource type="Script" path="res://src/script/ui.gd" id="2_d51jm"]
+[ext_resource type="Theme" uid="uid://d2thns4ydrrsh" path="res://resource/theme/sr_theme.tres" id="4_irr68"]
+[ext_resource type="Texture2D" uid="uid://d4l01mrwvlp8t" path="res://resource/img/ui/map-zoom-out.svg" id="5_1prth"]
+[ext_resource type="Texture2D" uid="uid://b7s43dcbn6j0w" path="res://resource/img/ui/map-zoom-in.svg" id="6_2j6ym"]
+[ext_resource type="Script" path="res://src/script/cam.gd" id="7_b1kfb"]
+[ext_resource type="Texture2D" uid="uid://btmmrmm4tfwoj" path="res://resource/img/ui/icon-holo.svg" id="7_cc2sk"]
+[ext_resource type="PackedScene" uid="uid://bq45kgu0obo" path="res://src/map/101/10101.tscn" id="8_7j4f2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vd72q"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_0we4w")
+
+[node name="TEST_InlineUI" type="CanvasLayer" parent="."]
+script = ExtResource("2_d51jm")
+
+[node name="TEST_Label" type="Label" parent="TEST_InlineUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "DEBUG_UI"
+label_settings = SubResource("LabelSettings_vd72q")
+
+[node name="LblVersion" type="Label" parent="TEST_InlineUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 40.0
+grow_vertical = 0
+theme = ExtResource("4_irr68")
+text = "Ver 0.0.1 Alpha"
+
+[node name="DEBUGLblVBox" type="VBoxContainer" parent="TEST_InlineUI"]
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 64.0
+theme = ExtResource("4_irr68")
+
+[node name="CamPos" type="Label" parent="TEST_InlineUI/DEBUGLblVBox"]
+layout_mode = 2
+
+[node name="CamZoom" type="Label" parent="TEST_InlineUI/DEBUGLblVBox"]
+layout_mode = 2
+text = "CamZoom: "
+
+[node name="CamSpeed" type="Label" parent="TEST_InlineUI/DEBUGLblVBox"]
+layout_mode = 2
+text = "CamSpeed: "
+
+[node name="MousePos" type="Label" parent="TEST_InlineUI/DEBUGLblVBox"]
+layout_mode = 2
+text = "MousePos: "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TEST_InlineUI"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -389.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("4_irr68")
+
+[node name="TEST_Button" type="Button" parent="TEST_InlineUI/VBoxContainer"]
+layout_mode = 2
+text = "{Test_btn}"
+
+[node name="resolution_Lbl" type="Label" parent="TEST_InlineUI/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "{Resolution}"
+
+[node name="resolution_select" type="OptionButton" parent="TEST_InlineUI/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+selected = 2
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600 x 900"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+
+[node name="resolution_apply" type="Button" parent="TEST_InlineUI/VBoxContainer"]
+layout_mode = 2
+text = "{Apply}"
+
+[node name="map-zooma" type="HBoxContainer" parent="TEST_InlineUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="zoom-out" type="TextureButton" parent="TEST_InlineUI/VBoxContainer/map-zooma"]
+layout_mode = 2
+texture_normal = ExtResource("5_1prth")
+
+[node name="zoom-slider" type="HSlider" parent="TEST_InlineUI/VBoxContainer/map-zooma"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("4_irr68")
+max_value = 7.0
+value = 1.0
+
+[node name="zoom-in" type="TextureButton" parent="TEST_InlineUI/VBoxContainer/map-zooma"]
+layout_mode = 2
+texture_normal = ExtResource("6_2j6ym")
+
+[node name="VboxWorld" type="VBoxContainer" parent="TEST_InlineUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxWorld" type="HBoxContainer" parent="TEST_InlineUI/VBoxContainer/VboxWorld"]
+layout_mode = 2
+
+[node name="LblWorld" type="Label" parent="TEST_InlineUI/VBoxContainer/VboxWorld/HBoxWorld"]
+layout_mode = 2
+text = "{Select_World}"
+
+[node name="BtnHolo" type="Button" parent="TEST_InlineUI/VBoxContainer/VboxWorld/HBoxWorld"]
+layout_mode = 2
+text = "{Holo}"
+icon = ExtResource("7_cc2sk")
+
+[node name="OpbtnWorld" type="OptionButton" parent="TEST_InlineUI/VBoxContainer/VboxWorld"]
+layout_mode = 2
+item_count = 4
+selected = 1
+popup/item_0/text = "{Map_100}"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "{Map_101}"
+popup/item_1/id = 1
+popup/item_2/text = "{Map_201}"
+popup/item_2/id = 2
+popup/item_3/text = "{Map_301}"
+popup/item_3/id = 3
+
+[node name="VboxMap" type="VBoxContainer" parent="TEST_InlineUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="LblMap" type="Label" parent="TEST_InlineUI/VBoxContainer/VboxMap"]
+layout_mode = 2
+text = "{Select_Map}"
+
+[node name="OpbtnMap" type="OptionButton" parent="TEST_InlineUI/VBoxContainer/VboxMap"]
+layout_mode = 2
+
+[node name="MainUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+limit_left = -1900
+limit_top = -1000
+limit_right = 1900
+limit_bottom = 1000
+limit_smoothed = true
+script = ExtResource("7_b1kfb")
+
+[node name="map" type="Node2D" parent="."]
+top_level = true
+
+[node name="Point" type="Control" parent="map"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TileMap" parent="map" instance=ExtResource("8_7j4f2")]
+
+[connection signal="pressed" from="TEST_InlineUI/VBoxContainer/TEST_Button" to="TEST_InlineUI" method="_on_test_button_pressed"]
+[connection signal="item_selected" from="TEST_InlineUI/VBoxContainer/resolution_select" to="TEST_InlineUI" method="_on_resolution_select_item_selected"]
+[connection signal="pressed" from="TEST_InlineUI/VBoxContainer/resolution_apply" to="TEST_InlineUI" method="_on_resolution_confirm_pressed"]
+[connection signal="pressed" from="TEST_InlineUI/VBoxContainer/map-zooma/zoom-out" to="." method="_on_zoomout_pressed"]
+[connection signal="value_changed" from="TEST_InlineUI/VBoxContainer/map-zooma/zoom-slider" to="." method="_on_zoomslider_value_changed"]
+[connection signal="pressed" from="TEST_InlineUI/VBoxContainer/map-zooma/zoom-in" to="." method="_on_zoomin_pressed"]
+[connection signal="item_selected" from="TEST_InlineUI/VBoxContainer/VboxWorld/OpbtnWorld" to="." method="_on_opbtn_world_item_selected"]
+[connection signal="item_selected" from="TEST_InlineUI/VBoxContainer/VboxWorld/OpbtnWorld" to="TEST_InlineUI" method="_on_opbtn_world_item_selected"]
