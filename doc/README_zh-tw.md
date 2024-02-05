@@ -1,6 +1,8 @@
 # StarRail Map
 [English](../README.md) | [简体中文](README_zh-cn.md) | 繁体中文
 
+用於練習Godot
+
 一個給星穹鐵道的地圖程序  
 使用 ***Godot 4.2*** 製作
 
