@@ -7,7 +7,8 @@ extends CanvasLayer
 @onready var trans_bg = $ColorRect
 
 func _ready() -> void:
-	$Panel.set_position(Vector2(1613.0, 0.0))
+	$Panel._set_size(Vector2(333.0, 216.0))
+	$Panel.set_position(Vector2(1587.0, 0.0))
 
 #------------------------
 #	World
