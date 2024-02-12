@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://xq2jtinayfb2"]
 
-[ext_resource type="Texture2D" uid="uid://cqcoi1up3yhuc" path="res://Resource/img/ico/world/101.png" id="1_1jelb"]
 [ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="1_b7m45"]
 [ext_resource type="Script" path="res://src/Script/ui/ui.gd" id="1_nrkoc"]
+[ext_resource type="Texture2D" uid="uid://dh1hx76pht8cw" path="res://Resource/img/ico/world/64/World00Icon64.png" id="3_wvfhn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5niyo"]
 bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
@@ -264,12 +264,13 @@ offset_bottom = 112.0
 scale = Vector2(1.3, 1.3)
 
 [node name="TextureRect" type="TextureRect" parent="MapTitle"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 64.0
 grow_vertical = 2
-texture = ExtResource("1_1jelb")
+texture = ExtResource("3_wvfhn")
 
 [node name="LblMap" type="Label" parent="MapTitle"]
 modulate = Color(0, 0, 0, 1)
@@ -289,6 +290,21 @@ offset_right = 158.5
 offset_bottom = 61.0
 scale = Vector2(0.8, 0.8)
 text = "{lbl_world}"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -29.0
+offset_right = -13.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "V. 0.0.6"
 
 [connection signal="item_selected" from="Panel/MapControl/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
 [connection signal="item_selected" from="Panel/MapControl/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]

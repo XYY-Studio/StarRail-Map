@@ -3,8 +3,8 @@ extends Camera2D
 
 var _zoom: float = 1.0
 var zoom_value: float = 0.2
-var zoom_max: float = 2.2
-var zoom_min: float = 0.6
+var zoom_max: float = 2.0
+var zoom_min: float = 0.2
 var zoom_speed: float = 8.0
 
 func _unhandled_input(event) -> void:
@@ -42,8 +42,4 @@ func camera_init() -> void:
 
 func set_camera_limit():
 	#TODO…
-	#Left: -2048
-	#Top: -1024
-	#Right: 2048
-	#Bottom: 1024
 	pass

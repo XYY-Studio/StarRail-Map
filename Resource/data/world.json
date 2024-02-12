@@ -1,24 +1,30 @@
 {
-	"version": "111",
+	"version": "200",
 	"world": [
 		{
 			"id": 100,
-			"enable": false
+			"enable": false,
+			"logo_path": ""
 		},
 		{
 			"id": 101,
 			"enable": true,
-			"logo_path": "res://Resource/img/ico/world/101.png"
+			"logo_path": "res://Resource/img/ico/world/64/World00Icon64.png"
 		},
 		{
 			"id": 201,
 			"enable": true,
-			"logo_path": "res://Resource/img/ico/world/201.png"
+			"logo_path": "res://Resource/img/ico/world/64/World01Icon64.png"
 		},
 		{
 			"id": 301,
 			"enable": true,
-			"logo_path": "res://Resource/img/ico/world/301.png"
+			"logo_path": "res://Resource/img/ico/world/64/World02Icon64.png"
+		},
+		{
+			"id": 401,
+			"enable": true,
+			"logo_path": "res://Resource/img/ico/world/64/World03Icon64.png"
 		}
 	]
 }

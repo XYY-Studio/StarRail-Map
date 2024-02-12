@@ -6,6 +6,9 @@ extends CanvasLayer
 @onready var anim_player = $Panel/AnimationPlayer
 @onready var trans_bg = $ColorRect
 
+func _ready() -> void:
+	$Panel.set_position(Vector2(1613.0, 0.0))
+
 #------------------------
 #	World
 
@@ -22,10 +25,25 @@ func add_world_option(world_id, enable: bool) -> void:
 		)
 
 func change_world(world_id) -> void:
+	var map_json = Global.map_json_data[str(world_id)]
 	clear_map_option()
 	Global.change_to_world(world_id)
-	for i in Global.map_json_data[str(world_id)]:
-		add_map_option(i["id"])
+	for i in map_json:
+		if i.has("is_separator"):
+			if i["is_separator"]:
+				add_map_option(i["id"], true)
+			else:
+				add_map_option(i["id"], false)
+		else:
+			add_map_option(i["id"], false)
+	
+	if map_json[0].has("is_separator"):
+		if map_json[0]:
+			change_map(int(map_json[1]["id"]))
+		else:
+			change_map(int(map_json[0]["id"]))
+	else:
+		change_map(int(map_json[0]["id"]))
 	
 	$MapTitle/LblWorld.text = "{world_%s}" %world_id
 	var ico_file
@@ -37,8 +55,6 @@ func change_world(world_id) -> void:
 		$MapTitle/TextureRect.set_texture(load(ico_file))
 	else:
 		print("World %s have no Logo." %str(world_id))
-	
-	change_map(int(Global.map_json_data[str(world_id)][0]["id"]))
 
 #------------------------
 #	Map
@@ -46,8 +62,11 @@ func change_world(world_id) -> void:
 func clear_map_option() -> void:
 	map_option.clear()
 
-func add_map_option(map_id: String) -> void:
-	map_option.add_item("{map_%s}" %map_id, int(map_id))
+func add_map_option(map_id: String, is_separator: bool) -> void:
+	if is_separator:
+		map_option.add_separator("{spt_%s}" %map_id)
+	else:
+		map_option.add_item("{map_%s}" %map_id, int(map_id))
 
 func change_map(map_id: int) -> void:
 	#Transitions
@@ -122,7 +141,7 @@ func _on_btn_setting_pressed() -> void:
 	$"/root/Main".show_setting_window(true)
 
 func _on_btn_holo_pressed() -> void:
-	pass # Replace with function body.
+	pass # TODO...
 
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()

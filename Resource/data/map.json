@@ -1,10 +1,10 @@
 {
-	"version": "165",
+	"version": "200",
 	"floorTemplate": {
 		"0": [1, 2],
 		"1": [0, 1],
 		"2": [0, 1, 2],
-		"3": [1, 2, 3]
+		"3": [1, 2, 3],
 	},
 	"100": [
 		{
@@ -14,7 +14,7 @@
 		{
 			"id": "10002",
 			"multiFloor": false
-		}
+		},
 	],
 	"101": [
 		{
@@ -59,7 +59,7 @@
 				"2": "10105_2",
 				"3": "10105_3"
 			}
-		}
+		},
 	],
 	"201": [
 		{
@@ -142,7 +142,7 @@
 				"1": "20112_1",
 				"2": "20112_2"
 			}
-		}
+		},
 	],
 	"301": [
 		{
@@ -203,6 +203,61 @@
 			"id": "30110",
 			"defaultCameraZoom": 0.6,
 			"multiFloor": false
-		}
-	]
+		},
+	],
+	"401": [
+		{
+			"id": "4010",
+			"is_separator": true
+		},
+		{
+			"id": "40101",
+			"defaultCameraZoom": 0.4,
+			"multiFloor": true,
+			"floorTemplate": "3",
+			"defaultFloor": "1",
+			"floor": {
+				"1": "40101_1",
+				"2": "40101_2",
+				"3": "40101_3"
+			}
+		},
+		{
+			"id": "4011",
+			"is_separator": true
+		},
+		{
+			"id": "40102",
+			"defaultCameraZoom": 0.4,
+			"multiFloor": true,
+			"floorTemplate": "3",
+			"defaultFloor": "2",
+			"floor": {
+			    "1": "40102_1",
+				"2": "40102_2",
+				"3": "40102_3"
+			}
+		},
+		{
+			"id": "40103",
+			"defaultCameraZoom": 0.4,
+			"multiFloor": false
+		},
+		{
+			"id": "40104",
+			"multiFloor": false
+		},
+		{
+			"id": "40105",
+			"defaultCameraZoom": 0.8,
+			"multiFloor": true,
+			"floorTemplate": "3",
+			"defaultFloor": "1",
+			"floor": {
+				"1": "40105_1",
+				"2": "40105_2",
+				"3": "40105_3"
+			}
+		},
+	],
 }

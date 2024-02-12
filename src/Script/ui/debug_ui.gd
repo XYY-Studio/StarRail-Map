@@ -12,7 +12,7 @@ var camera_zoom
 var text_mouse_pos = "MousePostion: "
 var text_camera_pos = "CameraPostion: "
 var text_camera_zoom = "CameraZoom: "
-var text_world_and_map = "NowWorld|Map: {0}|{1}"
+var text_world_and_map = "CurrentWorld|Map: {0}|{1}"
 
 func _process(delta):
 	mouse_pos = str(Global.mouse_pos)
@@ -24,7 +24,7 @@ func _process(delta):
 	lbl_camera_zoom.text = text_camera_zoom + camera_zoom
 
 func updata() -> void:
-	lbl_world_and_map.text = text_world_and_map.format([str(Global.now_world), str(Global.now_map)])
+	lbl_world_and_map.text = text_world_and_map.format([str(Global.current_world), str(Global.current_map)])
 
 @onready var index = $LblBox/HBoxContainer/indexInput.text
 @onready var world_select = $"../Ui/Panel/MapControl/WorldSelectBox/WorldSelect"

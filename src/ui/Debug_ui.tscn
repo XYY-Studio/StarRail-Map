@@ -40,7 +40,7 @@ text = "CameraZoom:"
 
 [node name="world and map" type="Label" parent="LblBox"]
 layout_mode = 2
-text = "NowWorld|Map: "
+text = "CurrentWorld|Map:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="LblBox"]
 layout_mode = 2

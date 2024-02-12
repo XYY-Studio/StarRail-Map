@@ -24,10 +24,13 @@ key,en,zh
 {lbl_setting_fullscreen},Fullscreen,全屏
 {lbl_setting_resolution},Resolution,分辨率
 {lbl_cheack_update},Check for update,检查更新
+{spt_4010},Reality,现实
+{spt_4011},Dreamscape,梦境
 {world_100},Astral Express,星穹列车
 {world_101},Herta Space Station,空间站「黑塔」
 {world_201},Jarilo-VI,雅利洛-Ⅵ
 {world_301},Xianzhou: The Luofu,仙舟「罗浮」
+{world_401},Penocony,匹诺康尼
 {map_10001},Parlor Car,观景车厢
 {map_10002},Passenger Cabin,客房车厢
 {map_10101},Master Control Zone,主控舱段
@@ -57,3 +60,8 @@ key,en,zh
 {map_30108},Scalegorge Waterscape,鳞渊境
 {map_30109},Aurum Alley,金人街
 {map_30110},Fyxestroll Garden,绥园
+{map_40101},The Reverie,「白日梦」酒店
+{map_40102},Golen Hour,黄金的时刻
+{map_40103},Dram's Edge,筑梦边境
+{map_40104},A Child's Dream,稚子的梦
+{map_40105},The Reverie,「白日梦」酒店

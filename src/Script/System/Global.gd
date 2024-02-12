@@ -17,14 +17,22 @@ func change_to_world(value: int) -> void:
 	current_world = value
 	current_world_data = world_json_data["world"][value % 100]
 
-func change_to_map(value: int) -> void:
+func change_to_map(value) -> void:
 	current_map = value
-	current_map_data = map_json_data[str(current_world)][(value % 100) - 1]
+	var index: int = 0
+	for i in map_json_data[str(current_world)]:
+		if i.has("id"):
+			if i["id"] == str(value):
+				current_map_data = i #map_json_data[str(current_world)][index]
+				break
+			else: index + 1
+		else: index + 1
 	MapManage.change_to_map(value)
-	if current_map_data.has("defaultCameraZoom"):
-		Camera.set_camera_zoom(current_map_data["defaultCameraZoom"])
-	else:
-		Camera.camera_init()
+	#Camera.camera_init()
+	#if current_map_data.has("defaultCameraZoom"):
+		#Camera.set_camera_zoom(current_map_data["defaultCameraZoom"])
+	
+	$"/root/Main/Debug_ui".updata()
 
 #------------------------
 #	Debug
