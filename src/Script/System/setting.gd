@@ -35,3 +35,13 @@ func _on_button_pressed() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+func _on_lang_option_button_item_selected(index: int) -> void:
+	var id = $"TabContainer/{set_general}/Language/OptionButton".get_item_id(index)
+	match id:
+		0:
+			TranslationServer.set_locale("zh_CN")
+		#1:
+			#TranslationServer.set_locale("zh_TW")
+		2:
+			TranslationServer.set_locale("en_US")

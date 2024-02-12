@@ -4,9 +4,6 @@ key,en,zh
 {window_setting},Settings,设置
 {set_general},General,通用
 {set_view},View,视频
-{lang_chs},Chinese,简体中文
-{lang_cht},Chinese Traditional,繁体中文
-{lang_en},English,英文
 {btn_exit},Exit,退出
 {btn_setting},Setting,设置
 {btn_cheack_update},Check update,检查更新
