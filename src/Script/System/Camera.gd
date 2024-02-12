@@ -2,9 +2,9 @@
 extends Camera2D
 
 var _zoom: float = 1.0
-var zoom_value: float = 0.2
-var zoom_max: float = 2.0
-var zoom_min: float = 0.2
+@export var zoom_value: float = 0.2
+@export var zoom_max: float = 2.0
+@export var zoom_min: float = 0.2
 var zoom_speed: float = 8.0
 
 func _unhandled_input(event) -> void:
@@ -21,6 +21,7 @@ func _unhandled_input(event) -> void:
 
 func _physics_process(delta) -> void:
 	zoom = lerp(zoom, _zoom * Vector2.ONE, zoom_speed * delta)
+	$"/root/Main/Ui/ZoomControl/SliderZoom".set_value(_zoom)
 
 func zoom_in() -> void:
 	_zoom = min(_zoom + zoom_value, zoom_max)

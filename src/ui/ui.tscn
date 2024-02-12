@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://xq2jtinayfb2"]
+[gd_scene load_steps=12 format=3 uid="uid://xq2jtinayfb2"]
 
 [ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="1_b7m45"]
 [ext_resource type="Script" path="res://src/Script/ui/ui.gd" id="1_nrkoc"]
 [ext_resource type="Texture2D" uid="uid://dh1hx76pht8cw" path="res://Resource/img/ico/world/64/World00Icon64.png" id="3_wvfhn"]
+[ext_resource type="Texture2D" uid="uid://dcllbm3ppijw4" path="res://Resource/img/ui/map-zoom-out.svg" id="4_4haon"]
+[ext_resource type="Texture2D" uid="uid://bd3je47endijg" path="res://Resource/img/ui/map-zoom-in.svg" id="5_12pev"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5niyo"]
 bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
@@ -101,6 +103,13 @@ _data = {
 "hide_floor": SubResource("Animation_odicp"),
 "show_floor": SubResource("Animation_6uow1")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq38p"]
+bg_color = Color(0.227451, 0.247059, 0.282353, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource("1_nrkoc")
@@ -306,9 +315,75 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "V. 0.0.6"
 
+[node name="ZoomControl" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -70.0
+offset_right = 209.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(200, 15)
+theme_override_styles/panel = SubResource("StyleBoxFlat_xq38p")
+
+[node name="BtnZoomOut" type="TextureButton" parent="ZoomControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 6.0
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("4_4haon")
+texture_pressed = ExtResource("4_4haon")
+texture_hover = ExtResource("4_4haon")
+texture_focused = ExtResource("4_4haon")
+
+[node name="SliderZoom" type="HSlider" parent="ZoomControl"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -8.0
+offset_right = -30.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnZoomIn" type="TextureButton" parent="ZoomControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -10.0
+offset_right = -9.0
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("5_12pev")
+texture_pressed = ExtResource("5_12pev")
+texture_hover = ExtResource("5_12pev")
+texture_focused = ExtResource("5_12pev")
+
 [connection signal="item_selected" from="Panel/MapControl/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
 [connection signal="item_selected" from="Panel/MapControl/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]
 [connection signal="item_selected" from="Panel/MapControl/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]
 [connection signal="pressed" from="Panel/BtnSetting" to="." method="_on_btn_setting_pressed"]
 [connection signal="pressed" from="Panel/BtnHolo" to="." method="_on_btn_holo_pressed"]
 [connection signal="pressed" from="Panel/BtnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="ZoomControl/BtnZoomOut" to="." method="_on_btn_zoom_out_pressed"]
+[connection signal="value_changed" from="ZoomControl/SliderZoom" to="." method="_on_slider_zoom_value_changed"]
+[connection signal="pressed" from="ZoomControl/BtnZoomIn" to="." method="_on_btn_zoom_in_pressed"]

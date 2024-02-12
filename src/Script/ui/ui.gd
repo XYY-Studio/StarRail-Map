@@ -1,12 +1,18 @@
 extends CanvasLayer
 
-@onready var world_option = $Panel/MapControl/WorldSelectBox/WorldSelect
-@onready var map_option = $Panel/MapControl/MapSelectBox/MapSelect
-@onready var floor_option = $Panel/MapControl/FloorSelectBox/FloorSelect
-@onready var anim_player = $Panel/AnimationPlayer
-@onready var trans_bg = $ColorRect
+@onready var world_option := $Panel/MapControl/WorldSelectBox/WorldSelect
+@onready var map_option := $Panel/MapControl/MapSelectBox/MapSelect
+@onready var floor_option := $Panel/MapControl/FloorSelectBox/FloorSelect
+@onready var anim_player := $Panel/AnimationPlayer
+@onready var trans_bg := $ColorRect
+@onready var camera := $"/root/Main/Camera"
+@onready var zoom_slider := $ZoomControl/SliderZoom
 
 func _ready() -> void:
+	zoom_slider.set_min(camera.zoom_min)
+	zoom_slider.set_max(camera.zoom_max)
+	zoom_slider.set_step(camera.zoom_value)
+	
 	$Panel._set_size(Vector2(333.0, 216.0))
 	$Panel.set_position(Vector2(1587.0, 0.0))
 
@@ -115,6 +121,11 @@ func clear_floor_option() -> void:
 	floor_option.clear()
 
 #------------------------
+#	Camera Zoom
+func set_zoom_slider(value: float) -> void:
+	zoom_slider.set_value(value)
+
+#------------------------
 #	Signal
 
 func _on_world_select_item_selected(index) -> void:
@@ -146,3 +157,12 @@ func _on_btn_holo_pressed() -> void:
 
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()
+
+func _on_btn_zoom_out_pressed() -> void:
+	camera.zoom_out()
+
+func _on_slider_zoom_value_changed(value: float) -> void:
+	camera.set_camera_zoom(value)
+
+func _on_btn_zoom_in_pressed() -> void:
+	camera.zoom_in()
