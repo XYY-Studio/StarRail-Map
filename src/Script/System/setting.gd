@@ -41,7 +41,7 @@ func _on_lang_option_button_item_selected(index: int) -> void:
 	match id:
 		0:
 			TranslationServer.set_locale("zh_CN")
-		#1:
-			#TranslationServer.set_locale("zh_TW")
+		1:
+			TranslationServer.set_locale("zh_TW")
 		2:
 			TranslationServer.set_locale("en_US")
