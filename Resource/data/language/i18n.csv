@@ -21,6 +21,7 @@ key,en,zh
 {lbl_setting_fullscreen},Fullscreen,全屏
 {lbl_setting_resolution},Resolution,分辨率
 {lbl_cheack_update},Check for update,检查更新
+{lbl_setting_ui_scale},GUI Scale,界面缩放
 {spt_4010},Reality,现实
 {spt_4011},Dreamscape,梦境
 {world_100},Astral Express,星穹列车

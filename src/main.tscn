@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cenkshvhr4nk1" path="res://src/ui/map_ui.tscn" id="1_k6t68"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_vkhng"]
 [ext_resource type="Script" path="res://src/system/Camera.gd" id="2_kwcvi"]
-[ext_resource type="PackedScene" uid="uid://bs2b5a2pt1lfd" path="res://src/ui/debug_ui.tscn" id="3_lxu5e"]
+[ext_resource type="PackedScene" uid="uid://bs2b5a2pt1lfd" path="res://src/ui/Debug_ui.tscn" id="3_lxu5e"]
 [ext_resource type="PackedScene" uid="uid://dpaf68yo1s2a6" path="res://src/system/setting/setting.tscn" id="4_0dprw"]
 
 [node name="Main" type="Node2D"]
