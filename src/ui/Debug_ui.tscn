@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqblgs7qy1kb1"]
+[gd_scene load_steps=3 format=3 uid="uid://bs2b5a2pt1lfd"]
 
-[ext_resource type="Script" path="res://src/Script/ui/debug_ui.gd" id="1_56gdd"]
-[ext_resource type="Theme" uid="uid://wu6fxbh8py31" path="res://Resource/debug_ui.tres" id="1_omw2a"]
+[ext_resource type="Theme" uid="uid://wu6fxbh8py31" path="res://Resource/debug_ui.tres" id="1_o4mpt"]
+[ext_resource type="Script" path="res://src/ui/debug_ui.gd" id="1_vfi7n"]
 
-[node name="Debug_ui" type="CanvasLayer"]
-script = ExtResource("1_56gdd")
+[node name="DebugUi" type="CanvasLayer"]
+script = ExtResource("1_vfi7n")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 2
@@ -12,7 +12,6 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -220.0
 offset_right = 330.0
-offset_bottom = -0.000488281
 grow_vertical = 0
 color = Color(0, 0, 0, 0.235294)
 
@@ -20,11 +19,10 @@ color = Color(0, 0, 0, 0.235294)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -219.0
+offset_top = -220.0
 offset_right = 330.0
-offset_bottom = 1.0
 grow_vertical = 0
-theme = ExtResource("1_omw2a")
+theme = ExtResource("1_o4mpt")
 
 [node name="mousePostion" type="Label" parent="LblBox"]
 layout_mode = 2
@@ -48,7 +46,6 @@ layout_mode = 2
 [node name="indexInput" type="LineEdit" parent="LblBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "index"
 editable = false
 
 [node name="disable" type="Button" parent="LblBox/HBoxContainer"]
@@ -76,8 +73,3 @@ text = "Hide Floor Select"
 layout_mode = 2
 size_flags_vertical = 10
 text = "DEBUG"
-
-[connection signal="pressed" from="LblBox/HBoxContainer/disable" to="." method="_on_disable_pressed"]
-[connection signal="pressed" from="LblBox/HBoxContainer/enable" to="." method="_on_enable_pressed"]
-[connection signal="pressed" from="LblBox/HBoxContainer2/ShowFloor" to="." method="_on_show_floor_pressed"]
-[connection signal="pressed" from="LblBox/HBoxContainer2/HideFloor" to="." method="_on_hide_floor_pressed"]

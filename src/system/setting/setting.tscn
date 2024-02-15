@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://csq1sngfx33uw"]
+[gd_scene load_steps=2 format=3 uid="uid://dpaf68yo1s2a6"]
 
-[ext_resource type="Script" path="res://src/Script/system/setting.gd" id="1_en8pw"]
+[ext_resource type="Script" path="res://src/system/setting/setting.gd" id="1_m8wkr"]
 
-[node name="setting" type="Window"]
+[node name="Setting" type="Window"]
 title = "{window_setting}"
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(800, 500)
 unresizable = true
-script = ExtResource("1_en8pw")
+script = ExtResource("1_m8wkr")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 custom_minimum_size = Vector2(450, 250)
@@ -79,11 +79,12 @@ layout_mode = 2
 layout_mode = 2
 text = "{lbl_setting_fullscreen}"
 
-[node name="Button" type="CheckButton" parent="TabContainer/{set_view}/FullScreen"]
+[node name="CheckButton" type="CheckButton" parent="TabContainer/{set_view}/FullScreen"]
 layout_mode = 2
 size_flags_horizontal = 10
 
 [node name="Resolution" type="HBoxContainer" parent="TabContainer/{set_view}"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_view}/Resolution"]
@@ -100,16 +101,15 @@ popup/item_0/id = 999
 popup/item_1/text = "1920×1080"
 popup/item_1/id = 0
 popup/item_2/text = "1600×900"
-popup/item_2/id = 2
+popup/item_2/id = 1
 popup/item_3/text = "1366×768"
-popup/item_3/id = 3
+popup/item_3/id = 2
 popup/item_4/text = "1360×768"
 popup/item_4/id = 3
 popup/item_5/text = "1280×720"
-popup/item_5/id = 4
+popup/item_5/id = 6
 
 [node name="Scale" type="HBoxContainer" parent="TabContainer/{set_view}"]
-visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
@@ -130,6 +130,6 @@ value = 0.5
 [connection signal="close_requested" from="." to="." method="_on_close_setting_requested"]
 [connection signal="item_selected" from="TabContainer/{set_general}/Language/OptionButton" to="." method="_on_lang_option_button_item_selected"]
 [connection signal="pressed" from="TabContainer/{set_general}/CheackUpdate/Button" to="." method="_on_update_button_pressed"]
-[connection signal="pressed" from="TabContainer/{set_view}/FullScreen/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TabContainer/{set_view}/FullScreen/CheckButton" to="." method="_on_full_screen_button_pressed"]
 [connection signal="item_selected" from="TabContainer/{set_view}/Resolution/OptionButton" to="." method="_on_resolution_option_item_selected"]
 [connection signal="value_changed" from="TabContainer/{set_view}/Scale/HSlider" to="." method="_on_ui_scale_value_changed"]

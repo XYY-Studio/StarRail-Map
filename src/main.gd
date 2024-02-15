@@ -1,7 +1,6 @@
 extends Node2D
-const Version = "0.0.5"
 
-@onready var Ui = $"/root/Main/Ui"
+@onready var Ui = $"/root/Main/MapUi"
 
 func _ready() -> void:
 	initial_app()

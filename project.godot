@@ -15,9 +15,8 @@ config/name_localized={
 "en_US": "StarRail Map",
 "zh_CN": "星穹铁道地图"
 }
-config/description="A map application for StarRail "
-config/version="0.0.6"
-config/tags=PackedStringArray("project")
+config/description="A map application for StarRail"
+config/version="0.0.7"
 run/main_scene="res://src/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60
@@ -25,9 +24,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://src/Script/system/Global.gd"
-Util="*res://src/Script/util/Util.gd"
-MapManage="*res://src/Script/map/MapManage.gd"
+Global="*res://src/system/Global.gd"
+MapManage="*res://src/system/map/MapManage.gd"
+Util="*res://src/util/Util.gd"
 
 [display]
 
@@ -41,12 +40,10 @@ window/stretch/aspect="expand"
 [gui]
 
 theme/custom_font="res://Resource/SR.ttf"
-theme/default_font_antialiasing=2
 
 [internationalization]
 
 locale/translations=PackedStringArray("res://Resource/data/language/i18n.en.translation", "res://Resource/data/language/i18n.zh.translation")
-locale/locale_filter_mode=0
 
 [rendering]
 

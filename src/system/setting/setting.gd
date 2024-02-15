@@ -30,7 +30,7 @@ func _on_resolution_option_item_selected(index: int) -> void:
 	
 	$"/root/".set_flag(FLAG_RESIZE_DISABLED, true)
 
-func _on_button_pressed() -> void:
+func _on_full_screen_button_pressed() -> void:
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:

@@ -21,7 +21,7 @@ func _unhandled_input(event) -> void:
 
 func _physics_process(delta) -> void:
 	zoom = lerp(zoom, _zoom * Vector2.ONE, zoom_speed * delta)
-	$"/root/Main/Ui/ZoomControl/SliderZoom".set_value(_zoom)
+	$"/root/Main/MapUi/ZoomControl/SliderZoom".set_value(_zoom)
 
 func zoom_in() -> void:
 	_zoom = min(_zoom + zoom_value, zoom_max)

@@ -1,18 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://xq2jtinayfb2"]
+[gd_scene load_steps=11 format=3 uid="uid://cenkshvhr4nk1"]
 
-[ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="1_b7m45"]
-[ext_resource type="Script" path="res://src/Script/ui/ui.gd" id="1_nrkoc"]
-[ext_resource type="Texture2D" uid="uid://dh1hx76pht8cw" path="res://Resource/img/ico/world/64/World00Icon64.png" id="3_wvfhn"]
-[ext_resource type="Texture2D" uid="uid://dcllbm3ppijw4" path="res://Resource/img/ui/map-zoom-out.svg" id="4_4haon"]
-[ext_resource type="Texture2D" uid="uid://bd3je47endijg" path="res://Resource/img/ui/map-zoom-in.svg" id="5_12pev"]
+[ext_resource type="Script" path="res://src/ui/map_ui.gd" id="1_ph7jl"]
+[ext_resource type="Texture2D" uid="uid://dcllbm3ppijw4" path="res://Resource/img/ui/map-zoom-out.svg" id="1_qwrav"]
+[ext_resource type="Texture2D" uid="uid://bd3je47endijg" path="res://Resource/img/ui/map-zoom-in.svg" id="2_fvjvq"]
+[ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="2_u0g2b"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5niyo"]
-bg_color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe46q"]
 corner_radius_top_left = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="Animation" id="Animation_haosb"]
+[sub_resource type="Animation" id="Animation_lh0vc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,7 +37,7 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_odicp"]
+[sub_resource type="Animation" id="Animation_h40xy"]
 resource_name = "hide_floor"
 length = 0.3
 step = 0.01
@@ -53,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.3, 1),
 "update": 0,
-"values": [Vector2(333, 216), Vector2(333, 180)]
+"values": [Vector2(333, 216), Vector2(333, 183)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,10 +66,9 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_6uow1"]
+[sub_resource type="Animation" id="Animation_ma1v5"]
 resource_name = "show_floor"
 length = 0.3
-step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,9 +77,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(0.3, 1),
 "update": 0,
-"values": [Vector2(333, 180), Vector2(333, 216)]
+"values": [Vector2(333, 183), Vector2(333, 216)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -97,22 +94,22 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vp10"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qebfd"]
 _data = {
-"RESET": SubResource("Animation_haosb"),
-"hide_floor": SubResource("Animation_odicp"),
-"show_floor": SubResource("Animation_6uow1")
+"RESET": SubResource("Animation_lh0vc"),
+"hide_floor": SubResource("Animation_h40xy"),
+"show_floor": SubResource("Animation_ma1v5")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq38p"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkujh"]
 bg_color = Color(0.227451, 0.247059, 0.282353, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[node name="Ui" type="CanvasLayer"]
-script = ExtResource("1_nrkoc")
+[node name="MapUi" type="CanvasLayer"]
+script = ExtResource("1_ph7jl")
 metadata/_edit_vertical_guides_ = [1587.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -125,13 +122,16 @@ mouse_filter = 2
 color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Panel" type="Panel" parent="."]
+editor_description = "如果漂移到别的地方了，就把x坐标减去窗口长度
+初始位置x:1587"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -333.0
+offset_left = 7347.0
+offset_right = 7680.0
 offset_bottom = 216.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_5niyo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qe46q")
 
 [node name="MapControl" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -139,9 +139,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -327.0
-offset_top = 114.0
+offset_top = 117.0
 offset_right = -5.0
-offset_bottom = 206.0
+offset_bottom = 209.0
 grow_horizontal = 0
 
 [node name="WorldSelectBox" type="Control" parent="Panel/MapControl"]
@@ -155,33 +155,23 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -11.5
-offset_right = 69.0
+offset_right = 134.0
 offset_bottom = 11.5
 grow_vertical = 2
 text = "{lbl_select_world}"
 
 [node name="WorldSelect" type="OptionButton" parent="Panel/MapControl/WorldSelectBox"]
 layout_mode = 1
-anchors_preset = 11
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -220.0
+offset_top = -14.0
+offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
-item_count = 4
-popup/item_0/text = "{world_100}"
-popup/item_0/id = 100
-popup/item_0/disabled = true
-popup/item_1/text = "{world_101}"
-popup/item_1/id = 101
-popup/item_1/disabled = true
-popup/item_2/text = "{world_201}"
-popup/item_2/id = 201
-popup/item_2/disabled = true
-popup/item_3/text = "{world_301}"
-popup/item_3/id = 301
-popup/item_3/disabled = true
 
 [node name="MapSelectBox" type="Control" parent="Panel/MapControl"]
 custom_minimum_size = Vector2(0, 28)
@@ -207,18 +197,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BtnSetting" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -115.0
-offset_top = 51.0
-offset_right = -6.0
-offset_bottom = 79.0
-grow_horizontal = 0
-text = "{btn_setting}"
-
 [node name="BtnHolo" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 1
@@ -227,11 +205,23 @@ anchor_right = 1.0
 offset_left = -115.0
 offset_top = 83.0
 offset_right = -6.0
-offset_bottom = 111.0
+offset_bottom = 114.0
 grow_horizontal = 0
 text = "{btn_holo}"
-icon = ExtResource("1_b7m45")
+icon = ExtResource("2_u0g2b")
 icon_alignment = 2
+
+[node name="BtnSetting" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -115.0
+offset_top = 49.0
+offset_right = -6.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "{btn_setting}"
 
 [node name="BtnExit" type="Button" parent="Panel"]
 layout_mode = 1
@@ -241,27 +231,14 @@ anchor_right = 1.0
 offset_left = -91.0
 offset_top = 6.0
 offset_right = -6.0
-offset_bottom = 34.0
+offset_bottom = 37.0
 grow_horizontal = 0
 text = "{btn_exit}"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
 libraries = {
-"": SubResource("AnimationLibrary_6vp10")
+"": SubResource("AnimationLibrary_qebfd")
 }
-
-[node name="PointPanel" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
 
 [node name="MapTitle" type="Control" parent="."]
 layout_mode = 3
@@ -279,14 +256,13 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 64.0
 grow_vertical = 2
-texture = ExtResource("3_wvfhn")
 
 [node name="LblMap" type="Label" parent="MapTitle"]
 modulate = Color(0, 0, 0, 1)
-layout_mode = 1
+layout_mode = 0
 offset_left = 71.5
 offset_top = 12.0
-offset_right = 147.5
+offset_right = 144.5
 offset_bottom = 35.0
 text = "{lbl_map}"
 
@@ -295,25 +271,10 @@ modulate = Color(0.333333, 0.333333, 0.333333, 1)
 layout_mode = 1
 offset_left = 71.5
 offset_top = 38.0
-offset_right = 158.5
+offset_right = 154.5
 offset_bottom = 61.0
 scale = Vector2(0.8, 0.8)
 text = "{lbl_world}"
-
-[node name="Label" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = -29.0
-offset_right = -13.0
-offset_bottom = -9.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "V. 0.0.6"
 
 [node name="ZoomControl" type="Panel" parent="."]
 anchors_preset = 7
@@ -328,7 +289,7 @@ offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(200, 15)
-theme_override_styles/panel = SubResource("StyleBoxFlat_xq38p")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fkujh")
 
 [node name="BtnZoomOut" type="TextureButton" parent="ZoomControl"]
 layout_mode = 1
@@ -341,10 +302,11 @@ offset_right = 22.0
 offset_bottom = 6.0
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
-texture_normal = ExtResource("4_4haon")
-texture_pressed = ExtResource("4_4haon")
-texture_hover = ExtResource("4_4haon")
-texture_focused = ExtResource("4_4haon")
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_qwrav")
+texture_pressed = ExtResource("1_qwrav")
+texture_hover = ExtResource("1_qwrav")
+texture_focused = ExtResource("1_qwrav")
 
 [node name="SliderZoom" type="HSlider" parent="ZoomControl"]
 layout_mode = 1
@@ -373,17 +335,42 @@ offset_bottom = 6.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
-texture_normal = ExtResource("5_12pev")
-texture_pressed = ExtResource("5_12pev")
-texture_hover = ExtResource("5_12pev")
-texture_focused = ExtResource("5_12pev")
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_fvjvq")
+texture_pressed = ExtResource("2_fvjvq")
+texture_hover = ExtResource("2_fvjvq")
+texture_focused = ExtResource("2_fvjvq")
+
+[node name="LblVersion" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -29.0
+offset_right = -32.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+text = "V 0.0.7
+"
+
+[node name="Timer" type="Timer" parent="LblVersion"]
+wait_time = 0.05
+one_shot = true
 
 [connection signal="item_selected" from="Panel/MapControl/WorldSelectBox/WorldSelect" to="." method="_on_world_select_item_selected"]
 [connection signal="item_selected" from="Panel/MapControl/MapSelectBox/MapSelect" to="." method="_on_map_select_item_selected"]
 [connection signal="item_selected" from="Panel/MapControl/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]
-[connection signal="pressed" from="Panel/BtnSetting" to="." method="_on_btn_setting_pressed"]
 [connection signal="pressed" from="Panel/BtnHolo" to="." method="_on_btn_holo_pressed"]
+[connection signal="pressed" from="Panel/BtnSetting" to="." method="_on_btn_setting_pressed"]
 [connection signal="pressed" from="Panel/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="ZoomControl/BtnZoomOut" to="." method="_on_btn_zoom_out_pressed"]
 [connection signal="value_changed" from="ZoomControl/SliderZoom" to="." method="_on_slider_zoom_value_changed"]
 [connection signal="pressed" from="ZoomControl/BtnZoomIn" to="." method="_on_btn_zoom_in_pressed"]
+[connection signal="gui_input" from="LblVersion" to="." method="_on_lbl_version_gui_input"]
+[connection signal="timeout" from="LblVersion/Timer" to="." method="_on_timer_timeout"]

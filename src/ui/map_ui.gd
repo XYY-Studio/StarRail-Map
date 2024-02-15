@@ -13,6 +13,7 @@ func _ready() -> void:
 	zoom_slider.set_max(camera.zoom_max)
 	zoom_slider.set_step(camera.zoom_value)
 	
+	# 奇怪的bug修复
 	$Panel._set_size(Vector2(333.0, 216.0))
 	$Panel.set_position(Vector2(1587.0, 0.0))
 
@@ -166,3 +167,14 @@ func _on_slider_zoom_value_changed(value: float) -> void:
 
 func _on_btn_zoom_in_pressed() -> void:
 	camera.zoom_in()
+
+var is_press_version: bool = false
+func _on_lbl_version_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		if event.button_mask == MOUSE_BUTTON_LEFT and is_press_version == false:
+			is_press_version = true
+			$LblVersion/Timer.start(0.1)
+			OS.shell_open("https://github.com/Xyyaua/StarRail-Map")
+
+func _on_timer_timeout() -> void:
+	is_press_version = false
