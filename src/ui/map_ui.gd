@@ -39,29 +39,30 @@ func change_world(world_id) -> void:
 	for i in map_json:
 		if i.has("is_separator"):
 			if i["is_separator"]:
-				add_map_option(i["id"], true)
-			else:
-				add_map_option(i["id"], false)
+				add_map_option(i["id"], true, true)
+			else: add_map_option(i["id"], false, true)
+		elif i.has("enable") && i["enable"] == false:
+			add_map_option(i["id"], false, false)
 		else:
-			add_map_option(i["id"], false)
+			add_map_option(i["id"], false, true)
 	
 	if map_json[0].has("is_separator"):
 		if map_json[0]:
 			change_map(int(map_json[1]["id"]))
-		else:
-			change_map(int(map_json[0]["id"]))
-	else:
-		change_map(int(map_json[0]["id"]))
+		else: change_map(int(map_json[0]["id"]))
+	else: change_map(int(map_json[0]["id"]))
+	world_option._select_int(world_option.get_item_index(world_id))
 	
 	$MapTitle/LblWorld.text = "{world_%s}" %world_id
-	var ico_file
+	var ico_file: String
 	for i in Global.world_json_data["world"]:
 		if i["id"] == world_id:
 			ico_file = i["logo_path"]
 			break
-	if ico_file != null:
+	if ico_file.is_empty() == false:
 		$MapTitle/TextureRect.set_texture(load(ico_file))
 	else:
+		$MapTitle/TextureRect.set_texture(null)
 		print("World %s have no Logo." %str(world_id))
 
 #------------------------
@@ -70,11 +71,14 @@ func change_world(world_id) -> void:
 func clear_map_option() -> void:
 	map_option.clear()
 
-func add_map_option(map_id: String, is_separator: bool) -> void:
+func add_map_option(_id: String, is_separator: bool, enable: bool) -> void:
 	if is_separator:
-		map_option.add_separator("{spt_%s}" %map_id)
-	else:
-		map_option.add_item("{map_%s}" %map_id, int(map_id))
+		map_option.add_separator("{spt_%s}" %_id)
+		return
+	map_option.add_item("{map_%s}" %_id, int(_id))
+	if !enable:
+		var idx = map_option.get_item_index(int(_id))
+		map_option.set_item_disabled(idx, !enable)
 
 func change_map(map_id: int) -> void:
 	#Transitions

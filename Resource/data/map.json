@@ -13,6 +13,7 @@
 		},
 		{
 			"id": "10002",
+			"enable": false,
 			"multiFloor": false
 		},
 	],
