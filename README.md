@@ -15,3 +15,7 @@ Made with ***Godot 4.2***
 - [ ] Point mark  
 - [ ] Check for updates  
 - [ ] Hot update  
+
+## Issue
+If you find some bugs or have some ideas  
+You can raise it in [Issue](https://github.com/Xyyaua/StarRail-Map/issues)

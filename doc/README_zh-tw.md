@@ -15,3 +15,7 @@
 - [ ] 點位標記  
 - [ ] 檢查更新  
 - [ ] 熱更新  
+
+## Issue
+如果你發現了一些bug，或是有一些想法
+都可以在[Issue](https://github.com/Xyyaua/StarRail-Map/issues)中提出來
