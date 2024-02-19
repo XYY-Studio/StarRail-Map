@@ -1,9 +1,15 @@
 extends Node2D
 
+func _process(delta) -> void:
+	Global.mouse_pos = get_global_mouse_position()
+	Global.camera_pos = Camera.position
+	Global.camera_zoom = Camera.zoom
+	
 func _ready() -> void:
 	initial_app()
 
 func initial_app() -> void:
+	Holo.show_holo(false)
 	Global.change_to_world(101)
 	Global.change_to_map(10101)
 	MapUi.clear_world_option()
@@ -11,10 +17,16 @@ func initial_app() -> void:
 		MapUi.add_world_option(i["id"], i["enable"])
 	MapUi.change_world(101)
 
-func _process(delta) -> void:
-	Global.mouse_pos = get_global_mouse_position()
-	Global.camera_pos = $Camera.position
-	Global.camera_zoom = $Camera.zoom
+func switch_to(value: int) -> void:
+	match value:
+		0: #Map
+			#MapUi.show_ui(true)
+			#Holo.show_holo(false)
+			pass
+		1: #Holo
+			#MapUi.show_ui(false)
+			#Holo.show_holo(true)
+			pass
 
 func show_setting_window(value: bool) -> void:
 	if value == $Setting.visible:

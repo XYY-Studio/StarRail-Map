@@ -7,7 +7,14 @@ var current_map_data
 var current_world
 var current_world_data
 var floor_type
-@onready var Camera = $"/root/Main/Camera"
+#@onready var Camera = $"/root/Main/Camera"
+
+var current_status: int
+
+enum status{
+	IN_MAP,
+	IN_HOLO,
+}
 
 #------------------------
 # Function

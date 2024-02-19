@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl2qgjxk3ed"]
+[gd_scene load_steps=4 format=3 uid="uid://dl2qgjxk3ed"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_vkhng"]
-[ext_resource type="Script" path="res://src/system/Camera.gd" id="2_kwcvi"]
 [ext_resource type="PackedScene" uid="uid://bs2b5a2pt1lfd" path="res://src/ui/Debug_ui.tscn" id="3_lxu5e"]
 [ext_resource type="PackedScene" uid="uid://dpaf68yo1s2a6" path="res://src/system/setting/setting.tscn" id="4_0dprw"]
 
@@ -9,10 +8,6 @@
 script = ExtResource("1_vkhng")
 
 [node name="DebugUi" parent="." instance=ExtResource("3_lxu5e")]
-
-[node name="Camera" type="Camera2D" parent="."]
-editor_draw_limits = true
-script = ExtResource("2_kwcvi")
 
 [node name="Point" type="Control" parent="."]
 layout_mode = 3

@@ -3,9 +3,10 @@ extends CanvasLayer
 @onready var world_option := $Panel/MapControl/WorldSelectBox/WorldSelect
 @onready var map_option := $Panel/MapControl/MapSelectBox/MapSelect
 @onready var floor_option := $Panel/MapControl/FloorSelectBox/FloorSelect
-@onready var anim_player := $Panel/AnimationPlayer
+@onready var floor_anim_player := $Panel/AnimationPlayer
+@onready var ui_anim_player := $AnimationPlayer
 @onready var trans_bg := $ColorRect
-@onready var camera := $"/root/Main/Camera"
+@onready var camera := Camera
 @onready var zoom_slider := $ZoomControl/SliderZoom
 
 #------------------------
@@ -21,7 +22,10 @@ func _ready() -> void:
 	$Panel.set_position(Vector2(1587.0, 0.0))
 
 func show_ui(value: bool) -> void:
-	set_visible(value)
+	if value:
+		ui_anim_player.play("show_ui")
+	else:
+		ui_anim_player.play("hide_ui")
 
 #------------------------
 #	World
@@ -109,9 +113,9 @@ func change_map(map_id: int) -> void:
 
 func show_floor(enable: bool) -> void:
 	if enable == true && floor_option.visible == false:
-		anim_player.play("show_floor")
+		floor_anim_player.play("show_floor")
 	elif enable == false && floor_option.visible == true:
-		anim_player.play("hide_floor")
+		floor_anim_player.play("hide_floor")
 	
 	floor_option.set_visible(enable)
 
@@ -164,7 +168,7 @@ func _on_btn_setting_pressed() -> void:
 	$"/root/Main".show_setting_window(true)
 
 func _on_btn_holo_pressed() -> void:
-	pass # TODO...
+	$"/root/Main".switch_to(1)
 
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()

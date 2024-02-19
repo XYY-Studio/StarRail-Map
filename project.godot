@@ -24,7 +24,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Camera="*res://src/system/Camera.gd"
 MapUi="*res://src/ui/map_ui.tscn"
+Holo="*res://src/holo/holo.tscn"
 Global="*res://src/system/Global.gd"
 MapManage="*res://src/system/map/MapManage.gd"
 Util="*res://src/util/Util.gd"

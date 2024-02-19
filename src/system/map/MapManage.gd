@@ -1,6 +1,6 @@
 extends Node
 
-@onready var Camera = $"/root/Main/Camera"
+#@onready var Camera = $"/root/Main/Camera"
 
 func change_to_map(map_id: int) -> void:
 	if not Global.current_map_data["multiFloor"]:
