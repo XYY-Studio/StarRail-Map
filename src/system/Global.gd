@@ -7,7 +7,6 @@ var current_map_data
 var current_world
 var current_world_data
 var floor_type
-@onready var Ui = $"/root/Main/MapUi"
 @onready var Camera = $"/root/Main/Camera"
 
 #------------------------

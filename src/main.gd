@@ -1,17 +1,15 @@
 extends Node2D
 
-@onready var Ui = $"/root/Main/MapUi"
-
 func _ready() -> void:
 	initial_app()
 
 func initial_app() -> void:
 	Global.change_to_world(101)
 	Global.change_to_map(10101)
-	Ui.clear_world_option()
+	MapUi.clear_world_option()
 	for i in Global.world_json_data["world"]:
-		Ui.add_world_option(i["id"], i["enable"])
-	Ui.change_world(101)
+		MapUi.add_world_option(i["id"], i["enable"])
+	MapUi.change_world(101)
 
 func _process(delta) -> void:
 	Global.mouse_pos = get_global_mouse_position()

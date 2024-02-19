@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl2qgjxk3ed"]
+[gd_scene load_steps=5 format=3 uid="uid://dl2qgjxk3ed"]
 
-[ext_resource type="PackedScene" uid="uid://cenkshvhr4nk1" path="res://src/ui/map_ui.tscn" id="1_k6t68"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_vkhng"]
 [ext_resource type="Script" path="res://src/system/Camera.gd" id="2_kwcvi"]
 [ext_resource type="PackedScene" uid="uid://bs2b5a2pt1lfd" path="res://src/ui/Debug_ui.tscn" id="3_lxu5e"]
@@ -8,8 +7,6 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vkhng")
-
-[node name="MapUi" parent="." instance=ExtResource("1_k6t68")]
 
 [node name="DebugUi" parent="." instance=ExtResource("3_lxu5e")]
 

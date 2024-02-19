@@ -69,7 +69,23 @@ text = "Show Floor Select"
 layout_mode = 2
 text = "Hide Floor Select"
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="LblBox"]
+layout_mode = 2
+
+[node name="ShowUI" type="Button" parent="LblBox/HBoxContainer3"]
+layout_mode = 2
+text = "Show Map UI"
+
+[node name="HideUI" type="Button" parent="LblBox/HBoxContainer3"]
+layout_mode = 2
+text = "Hide Map UI"
+
 [node name="Lbldebug" type="Label" parent="LblBox"]
 layout_mode = 2
 size_flags_vertical = 10
 text = "DEBUG"
+
+[connection signal="pressed" from="LblBox/HBoxContainer2/ShowFloor" to="." method="_on_show_floor_pressed"]
+[connection signal="pressed" from="LblBox/HBoxContainer2/HideFloor" to="." method="_on_hide_floor_pressed"]
+[connection signal="pressed" from="LblBox/HBoxContainer3/ShowUI" to="." method="_on_show_ui_pressed"]
+[connection signal="pressed" from="LblBox/HBoxContainer3/HideUI" to="." method="_on_hide_ui_pressed"]

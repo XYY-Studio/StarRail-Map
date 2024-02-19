@@ -8,6 +8,9 @@ extends CanvasLayer
 @onready var camera := $"/root/Main/Camera"
 @onready var zoom_slider := $ZoomControl/SliderZoom
 
+#------------------------
+#	General
+
 func _ready() -> void:
 	zoom_slider.set_min(camera.zoom_min)
 	zoom_slider.set_max(camera.zoom_max)
@@ -16,6 +19,9 @@ func _ready() -> void:
 	# 奇怪的bug修复
 	$Panel._set_size(Vector2(333.0, 216.0))
 	$Panel.set_position(Vector2(1587.0, 0.0))
+
+func show_ui(value: bool) -> void:
+	set_visible(value)
 
 #------------------------
 #	World

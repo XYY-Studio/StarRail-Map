@@ -27,7 +27,7 @@ func updata() -> void:
 	lbl_world_and_map.text = text_world_and_map.format([str(Global.current_world), str(Global.current_map)])
 
 @onready var index = $LblBox/HBoxContainer/indexInput.text
-@onready var world_select = $"../MapUi/Panel/MapControl/WorldSelectBox/WorldSelect"
+@onready var world_select = MapUi.world_option
 func _on_disable_pressed():
 	index = $LblBox/HBoxContainer/indexInput.text
 	world_select.set_item_disabled(int(index), true)
@@ -39,7 +39,13 @@ func _on_enable_pressed():
 	print("Enable index: " + index)
 
 func _on_show_floor_pressed():
-	$"../Ui".show_floor(true)
+	MapUi.show_floor(true)
 
 func _on_hide_floor_pressed():
-	$"../Ui".show_floor(false)
+	MapUi.show_floor(false)
+
+func _on_show_ui_pressed() -> void:
+	MapUi.show_ui(true)
+
+func _on_hide_ui_pressed() -> void:
+	MapUi.show_ui(false)
