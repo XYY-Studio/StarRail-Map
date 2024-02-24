@@ -1,6 +1,6 @@
 extends Node
 
-#@onready var Camera = $"/root/Main/Camera"
+@onready var maptexture = $"/root/Main/Map"
 
 func change_to_map(map_id: int) -> void:
 	if not Global.current_map_data["multiFloor"]:
@@ -12,20 +12,25 @@ func change_to_floor(index: String) -> void:
 
 #------------------------
 #	Other
-
-func get_world_list() -> Array:
-	return Global.current_world_data["world"]
-
-func get_map_list(world_id) -> Array:
-	return Global.current_map_data["%s" %world_id]
-
+#
+#func get_world_list() -> Array:
+	#return Global.current_world_data["world"]
+#
+#func get_map_list(world_id) -> Array:
+	#return Global.current_map_data["%s" %world_id]
+#
 #func get_map_data(index: int) -> Dictionary:
 	#return
 
-@onready var maptexture = $"/root/Main/Map"
-func set_map_texture(map_id):
+
+func set_map_texture(map_id) -> void:
 	maptexture.set_texture(load("res://Resource/img/map/%s/%s.png" %[Global.current_world, map_id]))
 	
 	Camera.camera_init()
 	if Global.current_map_data.has("defaultCameraZoom"):
 		Camera.set_camera_zoom(Global.current_map_data["defaultCameraZoom"])
+
+func set_holo_texture(path: String) -> void:
+	maptexture.set_texture(load(path))
+	
+	Camera.camera_init()

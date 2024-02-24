@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://deufxx2skl3pl"]
 
-[ext_resource type="Texture2D" uid="uid://ddmyjhlilt61f" path="res://Resource/img/map/holo/background.png" id="1_ldu5g"]
 [ext_resource type="Script" path="res://src/holo/holo.gd" id="1_u2qyc"]
+[ext_resource type="PackedScene" uid="uid://dm66v1hb8ydl6" path="res://src/holo/holo_ui.tscn" id="2_obifq"]
 
 [node name="Holo" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u2qyc")
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 2880.0
-offset_bottom = 1800.0
-texture = ExtResource("1_ldu5g")
+[node name="HoloUi" parent="." instance=ExtResource("2_obifq")]
+
+[node name="Holo Img" type="TextureRect" parent="."]
+layout_mode = 1

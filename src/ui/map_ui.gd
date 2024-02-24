@@ -56,11 +56,12 @@ func change_world(world_id) -> void:
 		else:
 			add_map_option(i["id"], false, true)
 	
-	if map_json[0].has("is_separator"):
-		if map_json[0]:
-			change_map(int(map_json[1]["id"]))
+	if Global.current_status == 0:
+		if map_json[0].has("is_separator"):
+			if map_json[0]:
+				change_map(int(map_json[1]["id"]))
+			else: change_map(int(map_json[0]["id"]))
 		else: change_map(int(map_json[0]["id"]))
-	else: change_map(int(map_json[0]["id"]))
 	world_option._select_int(world_option.get_item_index(world_id))
 	
 	$MapTitle/LblWorld.text = "{world_%s}" %world_id
@@ -139,6 +140,12 @@ func clear_floor_option() -> void:
 #	Camera Zoom
 func set_zoom_slider(value: float) -> void:
 	zoom_slider.set_value(value)
+
+#------------------------
+#	Other
+
+func set_version_lbl(value: String) -> void:
+	$LblVersion.set_text("V " + value)
 
 #------------------------
 #	Signal

@@ -40,6 +40,16 @@ func change_to_map(value) -> void:
 	
 	$"/root/Main/DebugUi".updata()
 
+func set_status(value: int) -> void:
+	match value:
+		0:
+			current_status = status.IN_MAP
+		1:
+			current_status = status.IN_HOLO
+		
+		_:
+			print("Can't set status: ", str(value))
+
 #------------------------
 #	Debug
 var mouse_pos
