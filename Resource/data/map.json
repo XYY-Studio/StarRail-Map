@@ -9,6 +9,7 @@
 	"100": [
 		{
 			"id": "10001",
+			"path": "res://Resource/img/map/100/10001.png",
 			"multiFloor": false
 		},
 		{
@@ -20,14 +21,17 @@
 	"101": [
 		{
 			"id": "10101",
+			"path": "res://Resource/img/map/101/10101.png",
 			"multiFloor": false
 		},
 		{
 			"id": "10102",
+			"path": "res://Resource/img/map/101/10102.png",
 			"multiFloor": false
 		},
 		{
 			"id": "10103",
+			"path": "res://Resource/img/map/101/",
 			"defaultCameraZoom": 1.6,
 			"multiFloor": true,
 			"floorTemplate": "2",
@@ -40,6 +44,7 @@
 		},
 		{
 			"id": "10104",
+			"path": "res://Resource/img/map/101/",
 			"defaultCameraZoom": 1.6,
 			"multiFloor": true,
 			"floorTemplate": "0",
@@ -51,6 +56,7 @@
 		},
 		{
 			"id": "10105",
+			"path": "res://Resource/img/map/101/",
 			"defaultCameraZoom": 1.4,
 			"multiFloor": true,
 			"floorTemplate": "3",
@@ -65,6 +71,7 @@
 	"201": [
 		{
 			"id": "20101",
+			"path": "res://Resource/img/map/201/",
 			"defaultCameraZoom": 0.8,
 			"multiFloor": true,
 			"floorTemplate": "1",
@@ -76,39 +83,47 @@
 		},
 		{
 			"id": "20102",
+			"path": "res://Resource/img/map/201/20102.png",
 			"defaultCameraZoom": 1.4,
 			"multiFloor": false
 		},
 		{
 			"id": "20103",
+			"path": "res://Resource/img/map/201/20103.png",
 			"multiFloor": false
 		},
 		{
 			"id": "20104",
+			"path": "res://Resource/img/map/201/20104.png",
 			"multiFloor": false
 		},
 		{
 			"id": "20105",
+			"path": "res://Resource/img/map/201/20105.png",
 			"defaultCameraZoom": 0.8,
 			"multiFloor": false
 		},
 		{
 			"id": "20106",
+			"path": "res://Resource/img/map/201/20106.png",
 			"defaultCameraZoom": 1.6,
 			"multiFloor": false
 		},
 		{
 			"id": "20107",
+			"path": "res://Resource/img/map/201/20107.png",
 			"defaultCameraZoom": 1.2,
 			"multiFloor": false
 		},
 		{
 			"id": "20108",
+			"path": "res://Resource/img/map/201/20108.png",
 			"defaultCameraZoom": 1.2,
 			"multiFloor": false
 		},
 		{
 			"id": "20109",
+			"path": "res://Resource/img/map/201/",
 			"defaultCameraZoom": 1.4,
 			"multiFloor": true,
 			"floorTemplate": "0",
@@ -120,6 +135,7 @@
 		},
 		{
 			"id": "20110",
+			"path": "res://Resource/img/map/201/",
 			"defaultCameraZoom": 1.2,
 			"multiFloor": true,
 			"floorTemplate": "0",
@@ -131,10 +147,12 @@
 		},
 		{
 			"id": "20111",
+			"path": "res://Resource/img/map/201/20111.png",
 			"multiFloor": false
 		},
 		{
 			"id": "20112",
+			"path": "res://Resource/img/map/201/",
 			"defaultCameraZoom": 0.6,
 			"multiFloor": true,
 			"floorTemplate": "0",
@@ -148,11 +166,13 @@
 	"301": [
 		{
 			"id": "30101",
+			"path": "res://Resource/img/map/301/30101.png",
 			"defaultCameraZoom": 1.2,
 			"multiFloor": false
 		},
 		{
 			"id": "30102",
+			"path": "res://Resource/img/map/301/",
 			"defaultCameraZoom": 0.8,
 			"multiFloor": true,
 			"floorTemplate": "0",
@@ -164,15 +184,18 @@
 		},
 		{
 			"id": "30103",
+			"path": "res://Resource/img/map/301/30103.png",
 			"multiFloor": false
 		},
 		{
 			"id": "30104",
+			"path": "res://Resource/img/map/301/30104.png",
 			"defaultCameraZoom": 1.6,
 			"multiFloor": false
 		},
 		{
 			"id": "30105",
+			"path": "res://Resource/img/map/301/",
 			"multiFloor": true,
 			"floorTemplate": "0",
 			"defaultFloor": "2",
@@ -183,25 +206,30 @@
 		},
 		{
 			"id": "30106",
+			"path": "res://Resource/img/map/301/30106.png",
 			"defaultCameraZoom": 0.8,
 			"multiFloor": false
 		},
 		{
 			"id": "30107",
+			"path": "res://Resource/img/map/301/30107.png",
 			"defaultCameraZoom": 0.8,
 			"multiFloor": false
 		},
 		{
 			"id": "30108",
+			"path": "res://Resource/img/map/301/30108.png",
 			"multiFloor": false
 		},
 		{
 			"id": "30109",
+			"path": "res://Resource/img/map/301/30109.png",
 			"defaultCameraZoom": 1.4,
 			"multiFloor": false
 		},
 		{
 			"id": "30110",
+			"path": "res://Resource/img/map/301/30110.png",
 			"defaultCameraZoom": 0.6,
 			"multiFloor": false
 		},
@@ -213,6 +241,7 @@
 		},
 		{
 			"id": "40101",
+			"path": "res://Resource/img/map/401/",
 			"defaultCameraZoom": 0.4,
 			"multiFloor": true,
 			"floorTemplate": "3",
@@ -229,6 +258,7 @@
 		},
 		{
 			"id": "40102",
+			"path": "res://Resource/img/map/401/",
 			"defaultCameraZoom": 0.4,
 			"multiFloor": true,
 			"floorTemplate": "3",
@@ -241,15 +271,18 @@
 		},
 		{
 			"id": "40103",
+			"path": "res://Resource/img/map/401/40103.png",
 			"defaultCameraZoom": 0.4,
 			"multiFloor": false
 		},
 		{
 			"id": "40104",
+			"path": "res://Resource/img/map/401/40104.png",
 			"multiFloor": false
 		},
 		{
 			"id": "40105",
+			"path": "res://Resource/img/map/401/",
 			"defaultCameraZoom": 0.8,
 			"multiFloor": true,
 			"floorTemplate": "3",
