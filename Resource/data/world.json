@@ -1,8 +1,8 @@
 {
-	"version": "205",
+	"version": "210",
 	"world": [
 		{
-			"id": 100,
+			"id": "100",
 			"enable": true,
 			"logo_path": "",
 			"holo": {
@@ -10,7 +10,7 @@
 			}
 		},
 		{
-			"id": 101,
+			"id": "101",
 			"enable": true,
 			"logo_path": "res://Resource/img/ico/world/64/World00Icon64.png",
 			"holo": {
@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"id": 201,
+			"id": "201",
 			"enable": true,
 			"logo_path": "res://Resource/img/ico/world/64/World01Icon64.png",
 			"holo": {
@@ -28,7 +28,7 @@
 			}
 		},
 		{
-			"id": 301,
+			"id": "301",
 			"enable": true,
 			"logo_path": "res://Resource/img/ico/world/64/World02Icon64.png",
 			"holo": {
@@ -37,7 +37,7 @@
 			}
 		},
 		{
-			"id": 401,
+			"id": "401",
 			"enable": true,
 			"logo_path": "res://Resource/img/ico/world/64/World03Icon64.png",
 			"holo": {
