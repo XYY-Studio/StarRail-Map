@@ -20,16 +20,35 @@ grow_vertical = 2
 [node name="{set_general}" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
 
-[node name="Language" type="HBoxContainer" parent="TabContainer/{set_general}"]
+[node name="Language" type="Control" parent="TabContainer/{set_general}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_general}/Language"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 196.0
+offset_bottom = 10.0
+grow_vertical = 2
 text = "{lbl_setting_language}"
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/{set_general}/Language"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 10
 item_count = 3
 selected = 0
@@ -41,29 +60,99 @@ popup/item_1/disabled = true
 popup/item_2/text = "English"
 popup/item_2/id = 2
 
-[node name="TotalSound" type="HBoxContainer" parent="TabContainer/{set_general}"]
+[node name="CameraInit-Floor" type="Control" parent="TabContainer/{set_general}"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/{set_general}/CameraInit-Floor"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 172.0
+offset_bottom = 10.0
+grow_vertical = 2
+text = "{lbl_setting_floor_cam_init}"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/{set_general}/CameraInit-Floor"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+button_pressed = true
+
+[node name="TotalSound" type="Control" parent="TabContainer/{set_general}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_general}/TotalSound"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 172.0
+offset_bottom = 10.0
+grow_vertical = 2
 text = "{lbl_setting_sound}"
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/{set_general}/TotalSound"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 10
 disabled = true
 
-[node name="CheackUpdate" type="HBoxContainer" parent="TabContainer/{set_general}"]
+[node name="CheackUpdate" type="Control" parent="TabContainer/{set_general}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_general}/CheackUpdate"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 179.0
+offset_bottom = 10.0
+grow_vertical = 2
 text = "{lbl_cheack_update}"
 
 [node name="Button" type="Button" parent="TabContainer/{set_general}/CheackUpdate"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 10
 text = "{btn_cheack_update}"
 
@@ -71,28 +160,66 @@ text = "{btn_cheack_update}"
 visible = false
 layout_mode = 2
 
-[node name="FullScreen" type="HBoxContainer" parent="TabContainer/{set_view}"]
+[node name="FullScreen" type="Control" parent="TabContainer/{set_view}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_view}/FullScreen"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 204.0
+offset_bottom = 10.0
+grow_vertical = 2
 text = "{lbl_setting_fullscreen}"
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/{set_view}/FullScreen"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 10
 
-[node name="Resolution" type="HBoxContainer" parent="TabContainer/{set_view}"]
+[node name="Resolution" type="Control" parent="TabContainer/{set_view}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_view}/Resolution"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 204.0
+offset_bottom = 10.0
+grow_vertical = 2
 text = "{lbl_setting_resolution}"
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/{set_view}/Resolution"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 10
 item_count = 6
 selected = 0
@@ -109,17 +236,73 @@ popup/item_4/id = 3
 popup/item_5/text = "1280×720"
 popup/item_5/id = 6
 
-[node name="Scale" type="HBoxContainer" parent="TabContainer/{set_view}"]
+[node name="Theme" type="Control" parent="TabContainer/{set_view}"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/{set_view}/Theme"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 174.0
+offset_bottom = 10.0
+grow_vertical = 2
+text = "{lbl_setting_theme}"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/{set_view}/Theme"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+item_count = 2
+selected = 0
+popup/item_0/text = "{setting_light}"
+popup/item_0/id = 0
+popup/item_1/text = "{setting_dark}"
+popup/item_1/id = 1
+
+[node name="Scale" type="Control" parent="TabContainer/{set_view}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/{set_view}/Scale"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 189.0
+offset_bottom = 10.0
+grow_vertical = 2
 text = "{lbl_setting_ui_scale}"
 
 [node name="HSlider" type="HSlider" parent="TabContainer/{set_view}/Scale"]
 custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
 min_value = 0.5
@@ -129,6 +312,7 @@ value = 0.5
 
 [connection signal="close_requested" from="." to="." method="_on_close_setting_requested"]
 [connection signal="item_selected" from="TabContainer/{set_general}/Language/OptionButton" to="." method="_on_lang_option_button_item_selected"]
+[connection signal="pressed" from="TabContainer/{set_general}/CameraInit-Floor/CheckButton" to="." method="_on_floor_cam_init_button_pressed"]
 [connection signal="pressed" from="TabContainer/{set_general}/CheackUpdate/Button" to="." method="_on_update_button_pressed"]
 [connection signal="pressed" from="TabContainer/{set_view}/FullScreen/CheckButton" to="." method="_on_full_screen_button_pressed"]
 [connection signal="item_selected" from="TabContainer/{set_view}/Resolution/OptionButton" to="." method="_on_resolution_option_item_selected"]
