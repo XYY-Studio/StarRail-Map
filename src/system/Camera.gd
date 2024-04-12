@@ -21,7 +21,8 @@ func _unhandled_input(event) -> void:
 
 func _physics_process(delta) -> void:
 	zoom = lerp(zoom, _zoom * Vector2.ONE, zoom_speed * delta)
-	MapUi.set_zoom_slider(_zoom)
+	get_tree().call_group("ZoomSlider", "set_zoom_slider", _zoom)
+	#MapUi.set_zoom_slider(_zoom)
 
 func zoom_in() -> void:
 	_zoom = min(_zoom + zoom_value, zoom_max)
@@ -37,7 +38,10 @@ func set_camera_zoom(value: float) -> void:
 	elif value > zoom_max:
 		_zoom = zoom_max
 
-func camera_init() -> void:
+func init_position() -> void:
+	position = Vector2.ZERO
+
+func init_camera() -> void:
 	position = Vector2.ZERO
 	_zoom = 1.0
 

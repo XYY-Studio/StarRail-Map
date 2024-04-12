@@ -5,27 +5,21 @@
 [node name="GlobalUi" type="CanvasLayer"]
 script = ExtResource("1_xfiyl")
 
-[node name="LblVersion" type="Label" parent="."]
+[node name="BtnVersion" type="Button" parent="."]
+unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -29.0
-offset_right = -32.0
-offset_bottom = -6.0
+offset_left = -49.0
+offset_top = -38.0
+offset_right = -30.0
+offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-text = "V
-"
+text = "V"
+flat = true
 
-[node name="Timer" type="Timer" parent="LblVersion"]
-wait_time = 0.05
-one_shot = true
-
-[connection signal="gui_input" from="LblVersion" to="." method="_on_lbl_version_gui_input"]
-[connection signal="timeout" from="LblVersion/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="BtnVersion" to="." method="_on_btn_version_pressed"]

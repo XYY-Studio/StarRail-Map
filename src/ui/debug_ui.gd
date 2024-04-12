@@ -4,6 +4,7 @@ var mouse_pos
 var camera_pos
 var camera_zoom
 
+@onready var MapUi = $"/root/Main/MapUi"
 @onready var lbl_mouse_pos = $LblBox/mousePostion
 @onready var lbl_camera_pos = $LblBox/cameraPostion
 @onready var lbl_camera_zoom = $LblBox/cameraZoom
@@ -22,6 +23,8 @@ func _process(delta):
 	lbl_mouse_pos.text = text_mouse_pos + mouse_pos
 	lbl_camera_pos.text = text_camera_pos + camera_pos
 	lbl_camera_zoom.text = text_camera_zoom + camera_zoom
+	
+	updata()
 
 func updata() -> void:
 	lbl_world_and_map.text = text_world_and_map.format([str(Global.current_world), str(Global.current_map)])

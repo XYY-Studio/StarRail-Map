@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var world_option := $Panel/MapControl/WorldSelectBox/WorldSelect
 @onready var map_option := $Panel/MapControl/MapSelectBox/MapSelect
@@ -9,6 +9,9 @@ extends CanvasLayer
 @onready var camera := Camera
 @onready var zoom_slider := $ZoomControl/SliderZoom
 
+var trtime = 0.1
+
+signal transition_over
 #------------------------
 #	General
 
@@ -21,66 +24,80 @@ func _ready() -> void:
 	$Panel._set_size(Vector2(333.0, 216.0))
 	$Panel.set_position(Vector2(1587.0, 0.0))
 
-func show_ui(value: bool) -> void:
-	if value:
-		ui_anim_player.play("show_ui")
-	else:
-		ui_anim_player.play("hide_ui")
+#func _process(delta: float) -> void:
+	#$ZoomControl/SliderZoom.set_value(Camera._zoom)
+
+func load_data() -> void:
+	clear_world_option()
+	for i in Global.world_data:
+		add_world_option(Global.world_data[i]["id"], Global.world_data[i]["enable"])
+	
+	print("完成Ui Data加载")
+
+func _set_visible(value: bool) -> void:
+	$".".set_visible(value)
+	#trans_bg.visible = false
+
+#------------------------
+#	Transitions
+
+func transition_start(time_s: float) -> void:
+	var tween := create_tween()
+	tween.tween_property(trans_bg, "color:a", 1, time_s)
+#await get_tree().create_timer(0.1).timeout
+
+func transition_end(time_s: float) -> void:
+	var tween := create_tween()
+	tween.tween_property(trans_bg, "color:a", 0, time_s)
 
 #------------------------
 #	World
 
-#清空世界选项
-func clear_world_option() -> void:
-	world_option.clear()
-
 func add_world_option(world_id, enable: bool) -> void:
 	world_option.add_item("{world_%s}" %world_id, int(world_id))
 	if not enable:
-		world_option.set_item_disabled(
-			world_option.get_item_index(int(world_id)),
-			true
-		)
+		world_option.set_item_disabled(world_option.get_item_index(int(world_id)), true)
 
-func change_world(world_id) -> void:
-	var map_json = Global.map_json_data[str(world_id)]
+func change_world(world_id: String) -> void:
 	clear_map_option()
-	Global.change_to_world(world_id)
-	for i in map_json:
-		if i.has("is_separator"):
-			if i["is_separator"]:
-				add_map_option(i["id"], true, true)
-			else: add_map_option(i["id"], false, true)
-		elif i.has("enable") && i["enable"] == false:
-			add_map_option(i["id"], false, false)
-		else:
-			add_map_option(i["id"], false, true)
+	Global.current_map_list = []
+	Global.current_world = world_id as int
+	Global.current_world_data = Global.world_data[world_id]
+	var map = Global.map_data
+	for i in map:
+		var map_data = map[i]
+		if map_data["world"] == world_id:
+			Global.current_map_list.append(i)
+			
+			if map_data.has("is_separator"):
+				if map_data["is_separator"]:
+					add_map_option(map_data["id"], true, true)
+				else: add_map_option(map_data["id"], false, true)
+			elif map_data.has("enable") && map_data["enable"] == false:
+				add_map_option(map_data["id"], false, false)
+			else:
+				add_map_option(map_data["id"], false, true)
 	
-	if Global.current_status == 0:
-		if map_json[0].has("is_separator"):
-			if map_json[0]:
-				change_map(int(map_json[1]["id"]))
-			else: change_map(int(map_json[0]["id"]))
-		else: change_map(int(map_json[0]["id"]))
-	world_option._select_int(world_option.get_item_index(world_id))
+	if len(Global.current_map_list[0]) == 5:
+		change_map(Global.current_map_list[0])
+	else:
+		change_map(Global.current_map_list[1])
+	world_option._select_int(world_option.get_item_index(int(world_id)))
 	
 	$MapTitle/LblWorld.text = "{world_%s}" %world_id
-	var ico_file: String
-	for i in Global.world_json_data["world"]:
-		if i["id"] == world_id:
-			ico_file = i["logo_path"]
-			break
+	var ico_file: String = Global.world_data[world_id]["logo_path"]
 	if ico_file.is_empty() == false:
 		$MapTitle/TextureRect.set_texture(load(ico_file))
 	else:
 		$MapTitle/TextureRect.set_texture(null)
 		print("World %s have no Logo." %str(world_id))
 
+#清空世界选项
+func clear_world_option() -> void:
+	world_option.clear()
+
 #------------------------
 #	Map
-
-func clear_map_option() -> void:
-	map_option.clear()
 
 func add_map_option(_id: String, is_separator: bool, enable: bool) -> void:
 	if is_separator:
@@ -91,24 +108,34 @@ func add_map_option(_id: String, is_separator: bool, enable: bool) -> void:
 		var idx = map_option.get_item_index(int(_id))
 		map_option.set_item_disabled(idx, !enable)
 
-func change_map(map_id: int) -> void:
-	#Transitions
-	var tween := create_tween()
-	tween.tween_property(trans_bg, "color:a", 1, 0.1)
-	await tween.finished
+func change_map(map_id) -> void:
+	transition_start(trtime)
+	await get_tree().create_timer(0.1).timeout
 	
-	$MapTitle/LblMap.text = "{map_%s}" %map_id
 	clear_floor_option()
-	Global.change_to_map(map_id)
-	var mut_f = Global.current_map_data["multiFloor"]
-	show_floor(mut_f)
-	if mut_f:
+	Global.current_map = map_id
+	Global.current_map_data = Global.map_data[str(map_id)]
+	$MapTitle/LblMap.text = "{map_%s}" %map_id
+	
+	if Global.current_map_data.has("defaultCameraZoom"):
+		camera.init_position()
+		set_zoom_slider(Global.current_map_data["defaultCameraZoom"])
+	else: 
+		camera.init_camera()
+	
+	var f = Global.current_map_data["multiFloor"]
+	show_floor(f)
+	if f:
 		set_floor_option(Global.current_map_data["floorTemplate"])
-		change_floor_option(Global.current_map_data["defaultFloor"])
+		change_floor(Global.current_map_data["defaultFloor"])
+		return
+	MapManager.set_map_to(str(map_id))
 	
-	tween = create_tween()
-	tween.tween_property(trans_bg, "color:a", 0, 0.1)
-	
+	transition_end(trtime)
+
+func clear_map_option() -> void:
+	map_option.clear()
+
 #------------------------
 #	Floor
 
@@ -121,55 +148,52 @@ func show_floor(enable: bool) -> void:
 	floor_option.set_visible(enable)
 
 func set_floor_option(floor_type: String) -> void:
-	for i in Global.map_json_data["floorTemplate"][floor_type]:
+	for i in Global.floorTemp[floor_type]:
 		floor_option.add_item("{floor_%s}" %i)
 
-func change_floor_option(index) -> void:
-	var num = 0
-	for i in Global.current_map_data["floor"]:
-		if i == index:
-			MapManage.change_to_floor(str(index))
-			floor_option.select(num)
-			break
-		num += 1
+func change_floor(index: String) -> void:
+	Global.current_floor = index
+	
+	MapManager.set_map_to(Global.current_map_data["floor"][int(index)])
+	floor_option.select(int(index))
+	transition_end(trtime)
 
 func clear_floor_option() -> void:
 	floor_option.clear()
 
 #------------------------
 #	Camera Zoom
+
 func set_zoom_slider(value: float) -> void:
 	zoom_slider.set_value(value)
-
-#------------------------
-#	Other
-
-func set_version_lbl(value: String) -> void:
-	$LblVersion.set_text("V " + value)
 
 #------------------------
 #	Signal
 
 func _on_world_select_item_selected(index) -> void:
 	var id = world_option.get_item_id(index)
-	change_world(id)
+	change_world(str(id))
 
 func _on_map_select_item_selected(index) -> void:
 	var id = map_option.get_item_id(index)
 	change_map(id)
+	
+	print("Ui0 选择地图%s" %id)
 
 func _on_floor_select_item_selected(index) -> void:
-	var tween := create_tween()
-	tween.tween_property(trans_bg, "color:a", 1, 0.1)
-	await tween.finished
+	transition_start(trtime)
+	await get_tree().create_timer(0.1).timeout
 	
-	if not Global.current_map_data["floor"].has("0"):
-		MapManage.change_to_floor(str(index + 1))
-	else:
-		MapManage.change_to_floor(str(index))
+	var id = floor_option.get_item_id(index)
+	change_floor(str(index))
 	
-	tween = create_tween()
-	tween.tween_property(trans_bg, "color:a", 0, 0.1)
+	if Global.seting_init_cam_floor == true:
+		if Global.current_map_data.has("defaultCameraZoom"):
+			camera.init_position()
+			set_zoom_slider(Global.current_map_data["defaultCameraZoom"])
+		else: 
+			camera.init_camera()
+	print("Ui0 选择楼层id%s, index: %s" %[id, index])
 
 func _on_btn_setting_pressed() -> void:
 	$"/root/Main".show_setting_window(true)
@@ -188,14 +212,3 @@ func _on_slider_zoom_value_changed(value: float) -> void:
 
 func _on_btn_zoom_in_pressed() -> void:
 	camera.zoom_in()
-
-var is_press_version: bool = false
-func _on_lbl_version_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouse:
-		if event.button_mask == MOUSE_BUTTON_LEFT and is_press_version == false:
-			is_press_version = true
-			$LblVersion/Timer.start(0.1)
-			OS.shell_open("https://github.com/Xyyaua/StarRail-Map")
-
-func _on_timer_timeout() -> void:
-	is_press_version = false

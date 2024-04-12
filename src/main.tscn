@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl2qgjxk3ed"]
+[gd_scene load_steps=6 format=3 uid="uid://dl2qgjxk3ed"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_vkhng"]
-[ext_resource type="PackedScene" uid="uid://bs2b5a2pt1lfd" path="res://src/ui/Debug_ui.tscn" id="3_lxu5e"]
-[ext_resource type="PackedScene" uid="uid://dpaf68yo1s2a6" path="res://src/system/setting/setting.tscn" id="4_0dprw"]
+[ext_resource type="Texture2D" uid="uid://16if5rxukqsw" path="res://Resource/img/map/101/10101.png" id="2_4kn60"]
+[ext_resource type="PackedScene" uid="uid://dpaf68yo1s2a6" path="res://src/system/setting/setting.tscn" id="2_dqyl4"]
+[ext_resource type="Script" path="res://src/ui/base_ui.gd" id="3_0r7rl"]
+[ext_resource type="PackedScene" uid="uid://cenkshvhr4nk1" path="res://src/ui/map_ui.tscn" id="4_jx5hm"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vkhng")
 
-[node name="DebugUi" parent="." instance=ExtResource("3_lxu5e")]
+[node name="Setting" parent="." instance=ExtResource("2_dqyl4")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Ui" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_0r7rl")
+
+[node name="MapUi" parent="Ui" groups=["Ui"] instance=ExtResource("4_jx5hm")]
 
 [node name="Point" type="Control" parent="."]
 layout_mode = 3
@@ -21,6 +31,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Setting" parent="." instance=ExtResource("4_0dprw")]
-visible = false
+texture = ExtResource("2_4kn60")

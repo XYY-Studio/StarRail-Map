@@ -16,7 +16,7 @@ config/name_localized={
 "zh_CN": "星穹铁道地图"
 }
 config/description="A map application for StarRail"
-config/version="0.0.7"
+config/version="0.1.0"
 run/main_scene="res://src/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60
@@ -26,7 +26,7 @@ config/icon="res://icon.svg"
 
 Camera="*res://src/system/Camera.gd"
 Global="*res://src/system/Global.gd"
-MapManage="*res://src/system/map/MapManage.gd"
+MapManager="*res://src/system/map/MapManager.gd"
 Util="*res://src/util/Util.gd"
 GlobalUi="*res://src/ui/global_ui.tscn"
 
@@ -38,6 +38,16 @@ window/size/window_width_override=1600
 window/size/window_height_override=900
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://Resource/": "teal",
+"res://src/": "green",
+"res://src/holo/": "blue",
+"res://src/system/": "yellow",
+"res://src/ui/": "teal"
+}
 
 [gui]
 

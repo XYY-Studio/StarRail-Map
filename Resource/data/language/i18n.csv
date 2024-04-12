@@ -5,6 +5,8 @@ key,en,zh
 {window_setting},Settings,设置
 {set_general},General,通用
 {set_view},View,视频
+{setting_light},Light,浅色
+{setting_dark},Dark,深色
 {btn_exit},Exit,退出
 {btn_setting},Setting,设置
 {btn_cheack_update},Check update,检查更新
@@ -22,10 +24,12 @@ key,en,zh
 {lbl_select_world},Select world,选择世界
 {lbl_setting_language},Language,语言
 {lbl_setting_sound},Sound,声音
+{lbl_setting_floor_cam_init},Init camera when change floor,在切换楼层时重置相机
 {lbl_setting_fullscreen},Fullscreen,全屏
 {lbl_setting_resolution},Resolution,分辨率
-{lbl_cheack_update},Check for update,检查更新
-{lbl_setting_ui_scale},GUI Scale,界面缩放
+{lbl_setting_theme},Theme(TODO),主题(TODO)
+{lbl_cheack_update},Check for update(TODO),检查更新(TODO)
+{lbl_setting_ui_scale},GUI Scale(TODO),界面缩放(TODO)
 {spt_4010},Reality,现实
 {spt_4011},Dreamscape,梦境
 {world_100},Astral Express,星穹列车
