@@ -1,5 +1,5 @@
 {
-	"version": "201",
+	"version": "210",
 	"floorTemplate": {
 		"0": [1, 2],
 		"1": [0, 1],
@@ -298,11 +298,37 @@
 				"defaultCameraZoom": 0.8,
 				"multiFloor": true,
 				"floorTemplate": "3",
-				"defaultFloor": "1",
+				"defaultFloor": "2",
 				"floor": [
 					"40105_1",
 					"40105_2",
 					"40105_3"
+				],
+				"suffix": ".png"
+			},
+			{
+				"id": "40106",
+				"path": "res://Resource/img/map/401/",
+				"defaultCameraZoom": 0.6,
+				"multiFloor": true,
+				"floorTemplate": "0",
+				"defaultFloor": "1",
+				"floor": [
+					"40106_1",
+					"40106_2"
+				],
+				"suffix": ".png"
+			},
+			{
+				"id": "40107",
+				"path": "res://Resource/img/map/401/",
+				"defaultCameraZoom": 0.8,
+				"multiFloor": true,
+				"floorTemplate": "0",
+				"defaultFloor": "1",
+				"floor": [
+					"40107_1",
+					"40107_2"
 				],
 				"suffix": ".png"
 			},

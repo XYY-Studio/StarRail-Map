@@ -90,7 +90,7 @@ func change_world(world_id: String) -> void:
 		$MapTitle/TextureRect.set_texture(load(ico_file))
 	else:
 		$MapTitle/TextureRect.set_texture(null)
-		print("World %s have no Logo." %str(world_id))
+		print("World %s 没有Logo." %str(world_id))
 
 #清空世界选项
 func clear_world_option() -> void:
@@ -109,13 +109,13 @@ func add_map_option(_id: String, is_separator: bool, enable: bool) -> void:
 		map_option.set_item_disabled(idx, !enable)
 
 func change_map(map_id) -> void:
+	$MapTitle/LblMap.text = "{map_%s}" %map_id
 	transition_start(trtime)
 	await get_tree().create_timer(0.1).timeout
 	
 	clear_floor_option()
 	Global.current_map = map_id
 	Global.current_map_data = Global.map_data[str(map_id)]
-	$MapTitle/LblMap.text = "{map_%s}" %map_id
 	
 	if Global.current_map_data.has("defaultCameraZoom"):
 		camera.init_position()
