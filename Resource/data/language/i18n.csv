@@ -14,6 +14,7 @@ key,en,zh
 {btn_map_select},Select map,选择地图
 {btn_holo},Holographic Overview,全息总览
 {btn_back_to_map},Back to Map,返回地图
+{btn_reset_cam},Reset Camera,重置相机
 {floor_0},B1,-1层
 {floor_1},F1,1层
 {floor_2},F2,2层

@@ -540,6 +540,18 @@ offset_bottom = 80.0
 grow_horizontal = 0
 text = "{btn_setting}"
 
+[node name="BtnResetCamera" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -258.0
+offset_top = 49.0
+offset_right = -120.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "{btn_reset_cam}"
+
 [node name="BtnExit" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 1
@@ -675,6 +687,7 @@ libraries = {
 [connection signal="item_selected" from="Panel/MapControl/FloorSelectBox/FloorSelect" to="." method="_on_floor_select_item_selected"]
 [connection signal="pressed" from="Panel/BtnHolo" to="." method="_on_btn_holo_pressed"]
 [connection signal="pressed" from="Panel/BtnSetting" to="." method="_on_btn_setting_pressed"]
+[connection signal="pressed" from="Panel/BtnResetCamera" to="." method="_on_btn_reset_camera_pressed"]
 [connection signal="pressed" from="Panel/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="ZoomControl/BtnZoomOut" to="." method="_on_btn_zoom_out_pressed"]
 [connection signal="value_changed" from="ZoomControl/SliderZoom" to="." method="_on_slider_zoom_value_changed"]

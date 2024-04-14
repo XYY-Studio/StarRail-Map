@@ -117,11 +117,7 @@ func change_map(map_id) -> void:
 	Global.current_map = map_id
 	Global.current_map_data = Global.map_data[str(map_id)]
 	
-	if Global.current_map_data.has("defaultCameraZoom"):
-		camera.init_position()
-		set_zoom_slider(Global.current_map_data["defaultCameraZoom"])
-	else: 
-		camera.init_camera()
+	camera.reset_camera()
 	
 	var f = Global.current_map_data["multiFloor"]
 	show_floor(f)
@@ -212,3 +208,6 @@ func _on_slider_zoom_value_changed(value: float) -> void:
 
 func _on_btn_zoom_in_pressed() -> void:
 	camera.zoom_in()
+
+func _on_btn_reset_camera_pressed() -> void:
+	camera.reset_camera()

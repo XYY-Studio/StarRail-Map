@@ -45,6 +45,13 @@ func init_camera() -> void:
 	position = Vector2.ZERO
 	_zoom = 1.0
 
+func reset_camera() -> void:
+	if Global.current_map_data.has("defaultCameraZoom"):
+		Camera.init_position()
+		set_camera_zoom(Global.current_map_data["defaultCameraZoom"])
+	else: 
+		Camera.init_camera()
+
 func set_camera_limit():
 	#TODO…
 	pass
