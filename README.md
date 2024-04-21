@@ -11,11 +11,17 @@ Made with ***Godot 4.2***
 **It's just a map at this stage**
 
 ## TODO
-- [x] Base map  
-- [ ] point  
-- [ ] Point mark  
-- [ ] Check for updates  
-- [ ] Hot update  
+- [x] Base map
+- [ ] Map mark
+- [ ] Holo map
+- [ ] Check for updates
+- [ ] Hot update
+
+## How To Use
+1. Clone this repository
+2. Open this project with Godot 4.2
+3. There may be some files that are not loaded when you open it for the first time. You just need to reload the project to solve it.
+4. Use it
 
 ## Issue
 If you find some bugs or have some ideas  
