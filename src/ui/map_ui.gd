@@ -11,7 +11,6 @@ extends Control
 
 var trtime = 0.1
 
-signal transition_over
 #------------------------
 #	General
 
@@ -44,7 +43,6 @@ func _set_visible(value: bool) -> void:
 func transition_start(time_s: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(trans_bg, "color:a", 1, time_s)
-#await get_tree().create_timer(0.1).timeout
 
 func transition_end(time_s: float) -> void:
 	var tween := create_tween()
