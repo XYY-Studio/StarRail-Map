@@ -24,10 +24,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Camera="*res://src/system/Camera.gd"
-Global="*res://src/system/Global.gd"
-MapManager="*res://src/system/map/MapManager.gd"
-Util="*res://src/util/Util.gd"
+Camera="*res://src/system/camera.gd"
+Global="*res://src/system/global.gd"
+MapManager="*res://src/system/map/map_manager.gd"
+Util="*res://src/util/util.gd"
 GlobalUi="*res://src/ui/global_ui.tscn"
 
 [display]
