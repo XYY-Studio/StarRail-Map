@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://38g14ruu3dhu"
-path="res://.godot/imported/Windspawn.png-54a486bd74357f8fcabc135dacc5ec67.ctex"
+path="res://.godot/imported/Windspawn.png-1ed19e39256490ab7be9db03d8ba71af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Windspawn.png"
-dest_files=["res://.godot/imported/Windspawn.png-54a486bd74357f8fcabc135dacc5ec67.ctex"]
+source_file="res://resource/img/ico/enemy/301/Windspawn.png"
+dest_files=["res://.godot/imported/Windspawn.png-1ed19e39256490ab7be9db03d8ba71af.ctex"]
 
 [params]
 

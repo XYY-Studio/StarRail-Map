@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddbsughyuya7c"
-path="res://.godot/imported/Thunderspawn.png-ca3d1bc913bbf02bd35faf798e087e6c.ctex"
+path="res://.godot/imported/Thunderspawn.png-9478fb31374c5dec5f7acfed68851684.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Thunderspawn.png"
-dest_files=["res://.godot/imported/Thunderspawn.png-ca3d1bc913bbf02bd35faf798e087e6c.ctex"]
+source_file="res://resource/img/ico/enemy/301/Thunderspawn.png"
+dest_files=["res://.godot/imported/Thunderspawn.png-9478fb31374c5dec5f7acfed68851684.ctex"]
 
 [params]
 

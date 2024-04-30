@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqt7bj152pqu"
-path="res://.godot/imported/clockie.png-23cd37ff5542bb4a864da742da002e9c.ctex"
+path="res://.godot/imported/clockie.png-08b463ae1359af3379b43828d7819a9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/clockie.png"
-dest_files=["res://.godot/imported/clockie.png-23cd37ff5542bb4a864da742da002e9c.ctex"]
+source_file="res://resource/img/ico/landmark/clockie.png"
+dest_files=["res://.godot/imported/clockie.png-08b463ae1359af3379b43828d7819a9c.ctex"]
 
 [params]
 

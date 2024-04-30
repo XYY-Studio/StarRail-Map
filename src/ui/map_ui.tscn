@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://cenkshvhr4nk1"]
 
 [ext_resource type="Script" path="res://src/ui/map_ui.gd" id="1_ph7jl"]
-[ext_resource type="Texture2D" uid="uid://dcllbm3ppijw4" path="res://Resource/img/ui/map-zoom-out.svg" id="1_qwrav"]
-[ext_resource type="Texture2D" uid="uid://bd3je47endijg" path="res://Resource/img/ui/map-zoom-in.svg" id="2_fvjvq"]
-[ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://Resource/img/ui/icon-holo.svg" id="2_u0g2b"]
+[ext_resource type="Texture2D" uid="uid://dcllbm3ppijw4" path="res://resource/img/ui/map-zoom-out.svg" id="1_qwrav"]
+[ext_resource type="Texture2D" uid="uid://bd3je47endijg" path="res://resource/img/ui/map-zoom-in.svg" id="2_fvjvq"]
+[ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://resource/img/ui/icon-holo.svg" id="2_u0g2b"]
 [ext_resource type="Script" path="res://src/ui/widget/silder.gd" id="4_k5v2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe46q"]

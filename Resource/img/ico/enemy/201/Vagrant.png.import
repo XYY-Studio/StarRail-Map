@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgtw4f1mxi23"
-path="res://.godot/imported/Vagrant.png-9fba621ec3aaa0dba07b018c54bd0840.ctex"
+path="res://.godot/imported/Vagrant.png-359ea229c9c9f9155eb0282870ae4a3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/201/Vagrant.png"
-dest_files=["res://.godot/imported/Vagrant.png-9fba621ec3aaa0dba07b018c54bd0840.ctex"]
+source_file="res://resource/img/ico/enemy/201/Vagrant.png"
+dest_files=["res://.godot/imported/Vagrant.png-359ea229c9c9f9155eb0282870ae4a3f.ctex"]
 
 [params]
 

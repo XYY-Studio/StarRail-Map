@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxvcvim234xmg"
-path="res://.godot/imported/aw.png-894005a850cef7b9b7a453cdf8ffde78.ctex"
+path="res://.godot/imported/aw.png-df96ad8f68f858b00e11dbfe3458fced.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/world/aw.png"
-dest_files=["res://.godot/imported/aw.png-894005a850cef7b9b7a453cdf8ffde78.ctex"]
+source_file="res://resource/img/ico/world/aw.png"
+dest_files=["res://.godot/imported/aw.png-df96ad8f68f858b00e11dbfe3458fced.ctex"]
 
 [params]
 

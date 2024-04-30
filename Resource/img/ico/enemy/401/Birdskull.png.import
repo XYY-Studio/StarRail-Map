@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jy4pd30to4em"
-path="res://.godot/imported/Birdskull.png-63ccd905748bdc83ab5e989e40b9a222.ctex"
+path="res://.godot/imported/Birdskull.png-ea45a0bbef6a1d9ceb7347064940c700.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/401/Birdskull.png"
-dest_files=["res://.godot/imported/Birdskull.png-63ccd905748bdc83ab5e989e40b9a222.ctex"]
+source_file="res://resource/img/ico/enemy/401/Birdskull.png"
+dest_files=["res://.godot/imported/Birdskull.png-ea45a0bbef6a1d9ceb7347064940c700.ctex"]
 
 [params]
 

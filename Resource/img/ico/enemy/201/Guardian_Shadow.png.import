@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bntfvs28ccjfl"
-path="res://.godot/imported/Guardian_Shadow.png-bd787d3678083f7b0ab57af8117490f3.ctex"
+path="res://.godot/imported/Guardian_Shadow.png-7375aca1314d8ff4ccc17df8ca1d3501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/201/Guardian_Shadow.png"
-dest_files=["res://.godot/imported/Guardian_Shadow.png-bd787d3678083f7b0ab57af8117490f3.ctex"]
+source_file="res://resource/img/ico/enemy/201/Guardian_Shadow.png"
+dest_files=["res://.godot/imported/Guardian_Shadow.png-7375aca1314d8ff4ccc17df8ca1d3501.ctex"]
 
 [params]
 

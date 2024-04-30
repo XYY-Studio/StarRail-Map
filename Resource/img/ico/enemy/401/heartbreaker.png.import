@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deonyuygyeld4"
-path="res://.godot/imported/heartbreaker.png-9c7c796fed8223a71e89bab062b718b7.ctex"
+path="res://.godot/imported/heartbreaker.png-27c5455af28b06cfa3c3da15254c35ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/401/heartbreaker.png"
-dest_files=["res://.godot/imported/heartbreaker.png-9c7c796fed8223a71e89bab062b718b7.ctex"]
+source_file="res://resource/img/ico/enemy/401/heartbreaker.png"
+dest_files=["res://.godot/imported/heartbreaker.png-27c5455af28b06cfa3c3da15254c35ed.ctex"]
 
 [params]
 

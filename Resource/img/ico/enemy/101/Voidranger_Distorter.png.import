@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chxvd3xafd8ug"
-path="res://.godot/imported/Voidranger_Distorter.png-917220a3c48176a70845bfc21e7d8031.ctex"
+path="res://.godot/imported/Voidranger_Distorter.png-4b4ce7177b85dc02c0fb3dd74d528cc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/101/Voidranger_Distorter.png"
-dest_files=["res://.godot/imported/Voidranger_Distorter.png-917220a3c48176a70845bfc21e7d8031.ctex"]
+source_file="res://resource/img/ico/enemy/101/Voidranger_Distorter.png"
+dest_files=["res://.godot/imported/Voidranger_Distorter.png-4b4ce7177b85dc02c0fb3dd74d528cc3.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc3fray1qm003"
-path="res://.godot/imported/Disciples_of_Sanctus_Medicus_Internal_Alchemist.png-a83c2ac23aba5a5776afad70c4c7ead5.ctex"
+path="res://.godot/imported/Disciples_of_Sanctus_Medicus_Internal_Alchemist.png-8d20d8477ad364bfc9908d22b3d35bac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Disciples_of_Sanctus_Medicus_Internal_Alchemist.png"
-dest_files=["res://.godot/imported/Disciples_of_Sanctus_Medicus_Internal_Alchemist.png-a83c2ac23aba5a5776afad70c4c7ead5.ctex"]
+source_file="res://resource/img/ico/enemy/301/Disciples_of_Sanctus_Medicus_Internal_Alchemist.png"
+dest_files=["res://.godot/imported/Disciples_of_Sanctus_Medicus_Internal_Alchemist.png-8d20d8477ad364bfc9908d22b3d35bac.ctex"]
 
 [params]
 

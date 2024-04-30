@@ -42,7 +42,7 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://Resource/": "teal",
+"res://resource/": "teal",
 "res://src/": "green",
 "res://src/holo/": "blue",
 "res://src/system/": "yellow",
@@ -51,7 +51,7 @@ folder_colors={
 
 [gui]
 
-theme/custom_font="res://Resource/SR.ttf"
+theme/custom_font="res://resource/SR.ttf"
 
 [internationalization]
 

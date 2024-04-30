@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='110' height='38' fill='none'>
+    <path fill='url(#a)' fill-rule='evenodd' d='M33.699 4.25H110v1.5H34.3L11.519 27.542l-1.037-1.084L33.7 4.25Z' clip-rule='evenodd'/>
+    <path fill='#DBC291' d='M75 5c1-.5 4-3.5 4.5-5C80 1.5 83 4.5 84 5c-1 .5-4 3.5-4.5 5C79 8.5 76 5.5 75 5ZM87.5 8c-.45-.857-1.5-2-2.5-3 1-1 2.05-2.143 2.5-3C89 3.5 91.65 4.571 93 5c-1.35.429-4 1.5-5.5 3Z'/>
+    <path fill='#DBC291' fill-rule='evenodd' d='M6.5 36.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 1.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Z' clip-rule='evenodd'/>
+    <circle cx='6.5' cy='31.5' r='2.5' fill='#fff'/>
+    <defs>
+        <linearGradient id='a' x1='93' x2='108.5' y1='5' y2='5' gradientUnits='userSpaceOnUse'>
+            <stop stop-color='#DBC291'/>
+            <stop offset='1' stop-color='#DBC291' stop-opacity='0'/>
+        </linearGradient>
+    </defs>
+</svg>

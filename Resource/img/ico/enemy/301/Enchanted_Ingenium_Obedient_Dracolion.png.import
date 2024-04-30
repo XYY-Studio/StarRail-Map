@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr1m4n3hqbsdd"
-path="res://.godot/imported/Enchanted_Ingenium_Obedient_Dracolion.png-1d92f869731d9b067ac323327584155e.ctex"
+path="res://.godot/imported/Enchanted_Ingenium_Obedient_Dracolion.png-e15ec96c0d30eb8f80db9ef0b15bb0cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Enchanted_Ingenium_Obedient_Dracolion.png"
-dest_files=["res://.godot/imported/Enchanted_Ingenium_Obedient_Dracolion.png-1d92f869731d9b067ac323327584155e.ctex"]
+source_file="res://resource/img/ico/enemy/301/Enchanted_Ingenium_Obedient_Dracolion.png"
+dest_files=["res://.godot/imported/Enchanted_Ingenium_Obedient_Dracolion.png-e15ec96c0d30eb8f80db9ef0b15bb0cb.ctex"]
 
 [params]
 

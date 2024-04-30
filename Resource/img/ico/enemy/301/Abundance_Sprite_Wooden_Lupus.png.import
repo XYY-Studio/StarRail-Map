@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcquqphcx357r"
-path="res://.godot/imported/Abundance_Sprite_Wooden_Lupus.png-5f52fc8026eb8cebb2ad07360b1fd1bf.ctex"
+path="res://.godot/imported/Abundance_Sprite_Wooden_Lupus.png-5cacf84ba05a126129bd1329fe160c3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Abundance_Sprite_Wooden_Lupus.png"
-dest_files=["res://.godot/imported/Abundance_Sprite_Wooden_Lupus.png-5f52fc8026eb8cebb2ad07360b1fd1bf.ctex"]
+source_file="res://resource/img/ico/enemy/301/Abundance_Sprite_Wooden_Lupus.png"
+dest_files=["res://.godot/imported/Abundance_Sprite_Wooden_Lupus.png-5cacf84ba05a126129bd1329fe160c3d.ctex"]
 
 [params]
 

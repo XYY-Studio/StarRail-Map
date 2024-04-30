@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ooowyjl16ppi"
-path="res://.godot/imported/Incineration_Shadewalker.png-743e195741fc6cf68cd0722ceeeaa072.ctex"
+path="res://.godot/imported/Incineration_Shadewalker.png-a13eea564a692503bce9ff3ccd358668.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/201/Incineration_Shadewalker.png"
-dest_files=["res://.godot/imported/Incineration_Shadewalker.png-743e195741fc6cf68cd0722ceeeaa072.ctex"]
+source_file="res://resource/img/ico/enemy/201/Incineration_Shadewalker.png"
+dest_files=["res://.godot/imported/Incineration_Shadewalker.png-a13eea564a692503bce9ff3ccd358668.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgnjenfpkc26t"
-path="res://.godot/imported/trashcan.png-30bdd33b62ed4bfe02a12bdfe7742e8d.ctex"
+path="res://.godot/imported/trashcan.png-f2ee1cbc28c9c9e18cedd60f814e3cc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/treasure/trashcan.png"
-dest_files=["res://.godot/imported/trashcan.png-30bdd33b62ed4bfe02a12bdfe7742e8d.ctex"]
+source_file="res://resource/img/ico/treasure/trashcan.png"
+dest_files=["res://.godot/imported/trashcan.png-f2ee1cbc28c9c9e18cedd60f814e3cc1.ctex"]
 
 [params]
 

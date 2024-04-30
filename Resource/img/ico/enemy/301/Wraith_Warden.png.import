@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ki28ogy30gm3"
-path="res://.godot/imported/Wraith_Warden.png-a46981bb9d2f0a25bb745d1556d87d52.ctex"
+path="res://.godot/imported/Wraith_Warden.png-a91c0bf324e3ac60f2da72d3eb384516.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Wraith_Warden.png"
-dest_files=["res://.godot/imported/Wraith_Warden.png-a46981bb9d2f0a25bb745d1556d87d52.ctex"]
+source_file="res://resource/img/ico/enemy/301/Wraith_Warden.png"
+dest_files=["res://.godot/imported/Wraith_Warden.png-a91c0bf324e3ac60f2da72d3eb384516.ctex"]
 
 [params]
 

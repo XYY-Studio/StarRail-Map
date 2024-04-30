@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c45smsfnnuxip"
-path="res://.godot/imported/suppression_tower.png-b8c9a2a08df60572f0c73ce51067eea1.ctex"
+path="res://.godot/imported/suppression_tower.png-d3e79775a377c2141c977ba106584e97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/suppression_tower.png"
-dest_files=["res://.godot/imported/suppression_tower.png-b8c9a2a08df60572f0c73ce51067eea1.ctex"]
+source_file="res://resource/img/ico/landmark/suppression_tower.png"
+dest_files=["res://.godot/imported/suppression_tower.png-d3e79775a377c2141c977ba106584e97.ctex"]
 
 [params]
 

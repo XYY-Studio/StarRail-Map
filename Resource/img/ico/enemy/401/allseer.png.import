@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://u3twntq0ufhs"
-path="res://.godot/imported/allseer.png-76146f24808d4d716ef139d11ca7014c.ctex"
+path="res://.godot/imported/allseer.png-ddbb8b4bf8bec7de72e1ea6f39ac1c25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/401/allseer.png"
-dest_files=["res://.godot/imported/allseer.png-76146f24808d4d716ef139d11ca7014c.ctex"]
+source_file="res://resource/img/ico/enemy/401/allseer.png"
+dest_files=["res://.godot/imported/allseer.png-ddbb8b4bf8bec7de72e1ea6f39ac1c25.ctex"]
 
 [params]
 

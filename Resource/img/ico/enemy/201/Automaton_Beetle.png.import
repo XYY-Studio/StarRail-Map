@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcvqfpqqsw3df"
-path="res://.godot/imported/Automaton_Beetle.png-2ed55893318eea531f44f7c2fef35fea.ctex"
+path="res://.godot/imported/Automaton_Beetle.png-11d64dfb9853f50baf55ca88f621dc51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/201/Automaton_Beetle.png"
-dest_files=["res://.godot/imported/Automaton_Beetle.png-2ed55893318eea531f44f7c2fef35fea.ctex"]
+source_file="res://resource/img/ico/enemy/201/Automaton_Beetle.png"
+dest_files=["res://.godot/imported/Automaton_Beetle.png-11d64dfb9853f50baf55ca88f621dc51.ctex"]
 
 [params]
 

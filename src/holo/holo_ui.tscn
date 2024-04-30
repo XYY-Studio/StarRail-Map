@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dm66v1hb8ydl6"]
 
-[ext_resource type="Texture2D" uid="uid://dah5vpteklwy5" path="res://Resource/img/map/holo/101_thumbnail.png" id="1_ncw20"]
+[ext_resource type="Texture2D" uid="uid://dah5vpteklwy5" path="res://resource/img/map/holo/101_thumbnail.png" id="1_ncw20"]
 [ext_resource type="Script" path="res://src/holo/holo_ui.gd" id="1_yi3ne"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar1mq"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://difcuthlfvqec"
-path="res://.godot/imported/Bubble_Hound.png-05e8982a2dcef8e593953688fbfa5ea9.ctex"
+path="res://.godot/imported/Bubble_Hound.png-581112069d39fb0ddfb1cf44fc245750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/401/Bubble_Hound.png"
-dest_files=["res://.godot/imported/Bubble_Hound.png-05e8982a2dcef8e593953688fbfa5ea9.ctex"]
+source_file="res://resource/img/ico/enemy/401/Bubble_Hound.png"
+dest_files=["res://.godot/imported/Bubble_Hound.png-581112069d39fb0ddfb1cf44fc245750.ctex"]
 
 [params]
 

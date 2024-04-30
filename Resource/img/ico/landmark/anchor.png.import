@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jkmn61x6h3l2"
-path="res://.godot/imported/anchor.png-44afbb2dd7305e93193041a6d4ea2a57.ctex"
+path="res://.godot/imported/anchor.png-73343214785e13cfbef44eac28e935f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/anchor.png"
-dest_files=["res://.godot/imported/anchor.png-44afbb2dd7305e93193041a6d4ea2a57.ctex"]
+source_file="res://resource/img/ico/landmark/anchor.png"
+dest_files=["res://.godot/imported/anchor.png-73343214785e13cfbef44eac28e935f7.ctex"]
 
 [params]
 

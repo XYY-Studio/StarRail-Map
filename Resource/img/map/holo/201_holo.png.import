@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d7vaul8xqvg4"
-path="res://.godot/imported/201_holo.png-087b11b68a2e7b910697c625b8d5b2db.ctex"
+path="res://.godot/imported/201_holo.png-b54eadfc73facbe3edae756d0a8d6b25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/map/holo/201_holo.png"
-dest_files=["res://.godot/imported/201_holo.png-087b11b68a2e7b910697c625b8d5b2db.ctex"]
+source_file="res://resource/img/map/holo/201_holo.png"
+dest_files=["res://.godot/imported/201_holo.png-b54eadfc73facbe3edae756d0a8d6b25.ctex"]
 
 [params]
 

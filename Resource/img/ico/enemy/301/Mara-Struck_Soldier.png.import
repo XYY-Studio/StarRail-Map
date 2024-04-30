@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e8i7sfy7ct01"
-path="res://.godot/imported/Mara-Struck_Soldier.png-648936846cb63d9ffcab8e0cbd5f034f.ctex"
+path="res://.godot/imported/Mara-Struck_Soldier.png-1dae7c59582d4242823a0f3188be68c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Mara-Struck_Soldier.png"
-dest_files=["res://.godot/imported/Mara-Struck_Soldier.png-648936846cb63d9ffcab8e0cbd5f034f.ctex"]
+source_file="res://resource/img/ico/enemy/301/Mara-Struck_Soldier.png"
+dest_files=["res://.godot/imported/Mara-Struck_Soldier.png-1dae7c59582d4242823a0f3188be68c9.ctex"]
 
 [params]
 

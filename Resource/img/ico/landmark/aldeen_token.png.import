@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlxnti2kp33p2"
-path="res://.godot/imported/aldeen_token.png-500f7b0147bcd051cbba25c23842fc9e.ctex"
+path="res://.godot/imported/aldeen_token.png-6853a21e1fea219c6363b2f8f1a731c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/aldeen_token.png"
-dest_files=["res://.godot/imported/aldeen_token.png-500f7b0147bcd051cbba25c23842fc9e.ctex"]
+source_file="res://resource/img/ico/landmark/aldeen_token.png"
+dest_files=["res://.godot/imported/aldeen_token.png-6853a21e1fea219c6363b2f8f1a731c8.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7c2hoylf3idk"
-path="res://.godot/imported/Disciples_of_Sanctus_Medicus_Ballistarius.png-4e9fb11fd3bdf79203eb6cd6fdeb16dd.ctex"
+path="res://.godot/imported/Disciples_of_Sanctus_Medicus_Ballistarius.png-42c7fe05da1341a89a70a103ee5a72a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Disciples_of_Sanctus_Medicus_Ballistarius.png"
-dest_files=["res://.godot/imported/Disciples_of_Sanctus_Medicus_Ballistarius.png-4e9fb11fd3bdf79203eb6cd6fdeb16dd.ctex"]
+source_file="res://resource/img/ico/enemy/301/Disciples_of_Sanctus_Medicus_Ballistarius.png"
+dest_files=["res://.godot/imported/Disciples_of_Sanctus_Medicus_Ballistarius.png-42c7fe05da1341a89a70a103ee5a72a3.ctex"]
 
 [params]
 

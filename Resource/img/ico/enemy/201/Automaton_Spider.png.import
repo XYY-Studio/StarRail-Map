@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctlf481g50vo"
-path="res://.godot/imported/Automaton_Spider.png-332fb3d1708b7007a9c1db961893385d.ctex"
+path="res://.godot/imported/Automaton_Spider.png-87fc4e0a32614cb71a848adeec9790ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/201/Automaton_Spider.png"
-dest_files=["res://.godot/imported/Automaton_Spider.png-332fb3d1708b7007a9c1db961893385d.ctex"]
+source_file="res://resource/img/ico/enemy/201/Automaton_Spider.png"
+dest_files=["res://.godot/imported/Automaton_Spider.png-87fc4e0a32614cb71a848adeec9790ed.ctex"]
 
 [params]
 

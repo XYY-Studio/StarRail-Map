@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwekbtpqf7n3g"
-path="res://.godot/imported/Abundance_Sprite_Golen_Hound.png-b19d3ffae9bece09761e0196a4aeb258.ctex"
+path="res://.godot/imported/Abundance_Sprite_Golen_Hound.png-71c673f429886e9442f4926b1c011bdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/301/Abundance_Sprite_Golen_Hound.png"
-dest_files=["res://.godot/imported/Abundance_Sprite_Golen_Hound.png-b19d3ffae9bece09761e0196a4aeb258.ctex"]
+source_file="res://resource/img/ico/enemy/301/Abundance_Sprite_Golen_Hound.png"
+dest_files=["res://.godot/imported/Abundance_Sprite_Golen_Hound.png-71c673f429886e9442f4926b1c011bdc.ctex"]
 
 [params]
 

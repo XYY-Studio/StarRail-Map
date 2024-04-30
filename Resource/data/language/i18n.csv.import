@@ -6,10 +6,10 @@ uid="uid://rm850svuefl0"
 
 [deps]
 
-files=["res://Resource/data/language/i18n.en.translation", "res://Resource/data/language/i18n.zh.translation"]
+files=["res://resource/data/language/i18n.en.translation", "res://resource/data/language/i18n.zh.translation"]
 
-source_file="res://Resource/data/language/i18n.csv"
-dest_files=["res://Resource/data/language/i18n.en.translation", "res://Resource/data/language/i18n.zh.translation"]
+source_file="res://resource/data/language/i18n.csv"
+dest_files=["res://resource/data/language/i18n.en.translation", "res://resource/data/language/i18n.zh.translation"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bohx8pyolbomd"
-path="res://.godot/imported/aw.png-725ed67027e7f6847a25512084c9ff3c.ctex"
+path="res://.godot/imported/aw.png-445eb91c482283a0a9b4f7a4012edbc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/event/aw.png"
-dest_files=["res://.godot/imported/aw.png-725ed67027e7f6847a25512084c9ff3c.ctex"]
+source_file="res://resource/img/ico/event/aw.png"
+dest_files=["res://.godot/imported/aw.png-445eb91c482283a0a9b4f7a4012edbc8.ctex"]
 
 [params]
 

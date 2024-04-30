@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx3xnk2menmhp"
-path="res://.godot/imported/Imaginary_Weaver.png-a66738609475c35f2d49a3c003aa7d45.ctex"
+path="res://.godot/imported/Imaginary_Weaver.png-5775bdf15c289006e803e59acf571922.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/enemy/201/Imaginary_Weaver.png"
-dest_files=["res://.godot/imported/Imaginary_Weaver.png-a66738609475c35f2d49a3c003aa7d45.ctex"]
+source_file="res://resource/img/ico/enemy/201/Imaginary_Weaver.png"
+dest_files=["res://.godot/imported/Imaginary_Weaver.png-5775bdf15c289006e803e59acf571922.ctex"]
 
 [params]
 

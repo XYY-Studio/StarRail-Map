@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bla5n3o5yxwt2"
-path="res://.godot/imported/starhunt_0.png-30eb0acedecd3f9ccd7700535d99a890.ctex"
+path="res://.godot/imported/starhunt_0.png-7697be5d3deeb9b8552182abcbe3202e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/starhunt_0.png"
-dest_files=["res://.godot/imported/starhunt_0.png-30eb0acedecd3f9ccd7700535d99a890.ctex"]
+source_file="res://resource/img/ico/landmark/starhunt_0.png"
+dest_files=["res://.godot/imported/starhunt_0.png-7697be5d3deeb9b8552182abcbe3202e.ctex"]
 
 [params]
 

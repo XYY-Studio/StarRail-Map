@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m4urq3tthu6x"
-path="res://.godot/imported/world_part_select.svg-822533f9e5993dfc1bde644f2c82a503.ctex"
+path="res://.godot/imported/world_part_select.svg-2135ae0047fbdf4241eba18948f84536.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ui/world_part_select.svg"
-dest_files=["res://.godot/imported/world_part_select.svg-822533f9e5993dfc1bde644f2c82a503.ctex"]
+source_file="res://resource/img/ui/world_part_select.svg"
+dest_files=["res://.godot/imported/world_part_select.svg-2135ae0047fbdf4241eba18948f84536.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nhyo0mw7k2m5"
-path="res://.godot/imported/a_dock.png-231b73169d80938d503fe62aa7bbe94f.ctex"
+path="res://.godot/imported/a_dock.png-ba042b02fd3b7e959d074ca74471e042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/a_dock.png"
-dest_files=["res://.godot/imported/a_dock.png-231b73169d80938d503fe62aa7bbe94f.ctex"]
+source_file="res://resource/img/ico/landmark/a_dock.png"
+dest_files=["res://.godot/imported/a_dock.png-ba042b02fd3b7e959d074ca74471e042.ctex"]
 
 [params]
 

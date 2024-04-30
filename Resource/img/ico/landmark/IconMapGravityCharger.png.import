@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daodiw3pnerg8"
-path="res://.godot/imported/IconMapGravityCharger.png-2f8743f35abe8bf30a4d58125066be8e.ctex"
+path="res://.godot/imported/IconMapGravityCharger.png-e35db63d61ceb1e0a339761f274775ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/IconMapGravityCharger.png"
-dest_files=["res://.godot/imported/IconMapGravityCharger.png-2f8743f35abe8bf30a4d58125066be8e.ctex"]
+source_file="res://resource/img/ico/landmark/IconMapGravityCharger.png"
+dest_files=["res://.godot/imported/IconMapGravityCharger.png-e35db63d61ceb1e0a339761f274775ea.ctex"]
 
 [params]
 

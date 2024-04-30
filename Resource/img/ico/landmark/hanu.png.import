@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckcudvckgyd05"
-path="res://.godot/imported/hanu.png-04c0fa75912f01b7da8ff2a5ab3fe7d0.ctex"
+path="res://.godot/imported/hanu.png-c9544d900192588f18deb33a1ac1edd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/img/ico/landmark/hanu.png"
-dest_files=["res://.godot/imported/hanu.png-04c0fa75912f01b7da8ff2a5ab3fe7d0.ctex"]
+source_file="res://resource/img/ico/landmark/hanu.png"
+dest_files=["res://.godot/imported/hanu.png-c9544d900192588f18deb33a1ac1edd8.ctex"]
 
 [params]
 
