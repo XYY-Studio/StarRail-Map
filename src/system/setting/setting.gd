@@ -21,7 +21,7 @@ func set_resolution(id) -> void:
 			DisplayServer.window_set_size(Vector2(1280, 720))
 
 #------------------------
-##	Signal
+#region Signal
 
 func _on_close_setting_requested() -> void:
 	self.set_visible(false)
@@ -74,3 +74,6 @@ func _on_floor_cam_init_button_pressed() -> void:
 func _on_frosted_glass_button_pressed() -> void:
 	Global.setting_frosted_glass = !Global.setting_frosted_glass
 	get_tree().call_group("Ui", "set_frosted_glass", Global.setting_frosted_glass)
+
+
+#endregion

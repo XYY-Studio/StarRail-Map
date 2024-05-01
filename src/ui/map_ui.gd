@@ -12,7 +12,7 @@ extends Control
 var trtime = 0.1
 
 #------------------------
-#	General
+#region General
 
 func _ready() -> void:
 	zoom_slider.set_min(camera.zoom_min)
@@ -44,8 +44,10 @@ func set_frosted_glass(value: bool) -> void:
 	else:
 		panel_shader.set_shader_parameter("lod", 0.0)
 
+#endregion
+
 #------------------------
-#	Transitions
+#region Transitions
 
 func transition_start(time_s: float) -> void:
 	var tween := create_tween()
@@ -55,8 +57,10 @@ func transition_end(time_s: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(trans_bg, "color:a", 0, time_s)
 
+#endregion
+
 #------------------------
-#	World
+#region World
 
 func add_world_option(world_id, enable: bool) -> void:
 	world_option.add_item("{world_%s}" %world_id, int(world_id))
@@ -101,8 +105,10 @@ func change_world(world_id: String) -> void:
 func clear_world_option() -> void:
 	world_option.clear()
 
+#endregion
+
 #------------------------
-#	Map
+#region Map
 
 func add_map_option(_id: String, is_separator: bool, enable: bool) -> void:
 	if is_separator:
@@ -137,8 +143,10 @@ func change_map(map_id) -> void:
 func clear_map_option() -> void:
 	map_option.clear()
 
+#endregion
+
 #------------------------
-#	Floor
+#region Floor
 
 func show_floor(enable: bool) -> void:
 	if enable == true && floor_option.visible == false:
@@ -162,14 +170,18 @@ func change_floor(index: String) -> void:
 func clear_floor_option() -> void:
 	floor_option.clear()
 
+#endregion
+
 #------------------------
-#	Camera Zoom
+#region Camera Zoom
 
 func set_zoom_slider(value: float) -> void:
 	zoom_slider.set_value(value)
 
+#endregion
+
 #------------------------
-#	Signal
+#region Signal
 
 func _on_world_select_item_selected(index) -> void:
 	var id = world_option.get_item_id(index)
@@ -216,3 +228,5 @@ func _on_btn_zoom_in_pressed() -> void:
 
 func _on_btn_reset_camera_pressed() -> void:
 	camera.reset_camera()
+
+#endregion
