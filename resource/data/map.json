@@ -273,7 +273,7 @@
 				"defaultCameraZoom": 0.4,
 				"multiFloor": true,
 				"floorTemplate": "3",
-				"defaultFloor": "2",
+				"defaultFloor": "1",
 				"floor": [
 					"40102_1",
 					"40102_2",
