@@ -18,8 +18,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 1
 
 [node name="{set_general}" type="VBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Language" type="Control" parent="TabContainer/{set_general}"]
@@ -159,7 +161,6 @@ size_flags_horizontal = 10
 text = "{btn_cheack_update}"
 
 [node name="{set_view}" type="VBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="FullScreen" type="Control" parent="TabContainer/{set_view}"]
@@ -323,6 +324,21 @@ offset_bottom = 10.0
 grow_vertical = 2
 text = "{lbl_setting_ui_scale}"
 
+[node name="Value" type="Label" parent="TabContainer/{set_view}/Scale"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -10.0
+offset_right = -222.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "value"
+
 [node name="HSlider" type="HSlider" parent="TabContainer/{set_view}/Scale"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
@@ -342,7 +358,7 @@ size_flags_vertical = 1
 min_value = 0.5
 max_value = 2.0
 step = 0.01
-value = 0.5
+value = 1.0
 
 [connection signal="close_requested" from="." to="." method="_on_close_setting_requested"]
 [connection signal="item_selected" from="TabContainer/{set_general}/Language/OptionButton" to="." method="_on_lang_option_button_item_selected"]

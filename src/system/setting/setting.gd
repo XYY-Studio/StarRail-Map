@@ -1,8 +1,12 @@
 extends Window
 
+@onready var lbl_scale_value = $"TabContainer/{set_view}/Scale/Value"
+
 var setting_data := preload("res://src/system/setting/setting_data.gd").new()
 
 func _ready() -> void:
+	lbl_scale_value.text = str(ProjectSettings.get_setting("display/window/stretch/scale", 1.0))
+	
 	setting_data.load_setting()
 	get_viewport().transparent = true
 	get_viewport().transparent_bg = true
@@ -30,6 +34,7 @@ func _on_update_button_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_ui_scale_value_changed(value: float) -> void:
+	$"TabContainer/{set_view}/Scale/Value".text = str(value)
 	ProjectSettings.set_setting("display/window/stretch/scale", value)
 	setting_data.save_setting("scale", value)
 
