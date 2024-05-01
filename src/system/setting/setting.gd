@@ -4,6 +4,8 @@ var setting_data := preload("res://src/system/setting/setting_data.gd").new()
 
 func _ready() -> void:
 	setting_data.load_setting()
+	get_viewport().transparent = true
+	get_viewport().transparent_bg = true
 
 func set_resolution(id) -> void:
 	match id:
@@ -67,4 +69,8 @@ func _on_lang_option_button_item_selected(index: int) -> void:
 	setting_data.save_setting("lang", lang)
 
 func _on_floor_cam_init_button_pressed() -> void:
-	Global.seting_init_cam_floor = !Global.seting_init_cam_floor
+	Global.setting_init_cam_floor = !Global.setting_init_cam_floor
+
+func _on_frosted_glass_button_pressed() -> void:
+	Global.setting_frosted_glass = !Global.setting_frosted_glass
+	get_tree().call_group("Ui", "set_frosted_glass", Global.setting_frosted_glass)

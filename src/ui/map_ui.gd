@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	# 奇怪的bug修复
 	$Panel._set_size(Vector2(333.0, 216.0))
-	$Panel.set_position(Vector2(1587.0, 0.0))
+	$Panel.set_position(Vector2(1570.0, 20.0))
 
 #func _process(delta: float) -> void:
 	#$ZoomControl/SliderZoom.set_value(Camera._zoom)
@@ -36,6 +36,13 @@ func load_data() -> void:
 func _set_visible(value: bool) -> void:
 	$".".set_visible(value)
 	#trans_bg.visible = false
+
+func set_frosted_glass(value: bool) -> void:
+	var panel_shader = $Panel.material
+	if value:
+		panel_shader.set_shader_parameter("lod", 4.0)
+	else:
+		panel_shader.set_shader_parameter("lod", 0.0)
 
 #------------------------
 #	Transitions
@@ -181,7 +188,7 @@ func _on_floor_select_item_selected(index) -> void:
 	var id = floor_option.get_item_id(index)
 	change_floor(str(index))
 	
-	if Global.seting_init_cam_floor == true:
+	if Global.setting_init_cam_floor == true:
 		if Global.current_map_data.has("defaultCameraZoom"):
 			camera.init_position()
 			set_zoom_slider(Global.current_map_data["defaultCameraZoom"])

@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpaf68yo1s2a6"]
+[gd_scene load_steps=3 format=3 uid="uid://dpaf68yo1s2a6"]
 
 [ext_resource type="Script" path="res://src/system/setting/setting.gd" id="1_m8wkr"]
+[ext_resource type="Theme" uid="uid://bxkemqhwjcfax" path="res://src/ui/theme/window.tres" id="1_nl1gh"]
 
 [node name="Setting" type="Window"]
 title = "{window_setting}"
 initial_position = 1
 size = Vector2i(800, 500)
 unresizable = true
+theme = ExtResource("1_nl1gh")
 script = ExtResource("1_m8wkr")
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -191,6 +193,38 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 10
 
+[node name="FrostedGlass" type="Control" parent="TabContainer/{set_view}"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/{set_view}/FrostedGlass"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 204.0
+offset_bottom = 10.0
+grow_vertical = 2
+text = "{lbl_setting_frosted_glass}"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/{set_view}/FrostedGlass"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+button_pressed = true
+
 [node name="Resolution" type="Control" parent="TabContainer/{set_view}"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -315,5 +349,6 @@ value = 0.5
 [connection signal="pressed" from="TabContainer/{set_general}/CameraInit-Floor/CheckButton" to="." method="_on_floor_cam_init_button_pressed"]
 [connection signal="pressed" from="TabContainer/{set_general}/CheackUpdate/Button" to="." method="_on_update_button_pressed"]
 [connection signal="pressed" from="TabContainer/{set_view}/FullScreen/CheckButton" to="." method="_on_full_screen_button_pressed"]
+[connection signal="pressed" from="TabContainer/{set_view}/FrostedGlass/CheckButton" to="." method="_on_frosted_glass_button_pressed"]
 [connection signal="item_selected" from="TabContainer/{set_view}/Resolution/OptionButton" to="." method="_on_resolution_option_item_selected"]
 [connection signal="value_changed" from="TabContainer/{set_view}/Scale/HSlider" to="." method="_on_ui_scale_value_changed"]

@@ -27,6 +27,7 @@ key,en,zh
 {lbl_setting_sound},Sound,声音
 {lbl_setting_floor_cam_init},Init camera when change floor,在切换楼层时重置相机
 {lbl_setting_fullscreen},Fullscreen,全屏
+{lbl_setting_frosted_glass},Enable frosted glass effect,启用毛玻璃效果
 {lbl_setting_resolution},Resolution,分辨率
 {lbl_setting_theme},Theme(TODO),主题(TODO)
 {lbl_cheack_update},Check for update(TODO),检查更新(TODO)

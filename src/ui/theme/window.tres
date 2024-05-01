@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bxkemqhwjcfax"]
+
+[ext_resource type="StyleBox" uid="uid://deduaqpj83cwf" path="res://src/ui/theme/window_style_box_flat.tres" id="1_xtdxc"]
+
+[resource]
+Window/styles/embedded_border = ExtResource("1_xtdxc")
+Window/styles/embedded_unfocused_border = ExtResource("1_xtdxc")

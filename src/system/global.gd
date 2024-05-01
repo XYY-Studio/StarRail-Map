@@ -14,7 +14,8 @@ var current_floor
 
 #------------------------
 #	Settings
-var seting_init_cam_floor :bool = true
+var setting_init_cam_floor :bool = true
+var setting_frosted_glass :bool = true
 
 #------------------------
 #	Debug

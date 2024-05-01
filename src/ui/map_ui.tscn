@@ -1,15 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://cenkshvhr4nk1"]
+[gd_scene load_steps=19 format=3 uid="uid://cenkshvhr4nk1"]
 
+[ext_resource type="Theme" uid="uid://b21njsd73jva8" path="res://src/ui/theme/map_ui.tres" id="1_aypqx"]
 [ext_resource type="Script" path="res://src/ui/map_ui.gd" id="1_ph7jl"]
 [ext_resource type="Texture2D" uid="uid://dcllbm3ppijw4" path="res://resource/img/ui/map-zoom-out.svg" id="1_qwrav"]
+[ext_resource type="Shader" path="res://src/ui/shader/frosted_glass.gdshader" id="2_87m60"]
 [ext_resource type="Texture2D" uid="uid://bd3je47endijg" path="res://resource/img/ui/map-zoom-in.svg" id="2_fvjvq"]
 [ext_resource type="Texture2D" uid="uid://1tlj1sgsjrd4" path="res://resource/img/ui/icon-holo.svg" id="2_u0g2b"]
 [ext_resource type="Script" path="res://src/ui/widget/silder.gd" id="4_k5v2o"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe46q"]
-corner_radius_top_left = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ley2d"]
+shader = ExtResource("2_87m60")
+shader_parameter/lod = 4.0
+shader_parameter/custom_color = Vector4(0.9, 0.9, 0.9, 1)
 
 [sub_resource type="Animation" id="Animation_lh0vc"]
 length = 0.001
@@ -101,6 +103,11 @@ _data = {
 "hide_floor": SubResource("Animation_h40xy"),
 "show_floor": SubResource("Animation_ma1v5")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_um0je"]
+shader = ExtResource("2_87m60")
+shader_parameter/lod = 4.0
+shader_parameter/custom_color = Vector4(0.9, 0.9, 0.9, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkujh"]
 bg_color = Color(0.227451, 0.247059, 0.282353, 1)
@@ -423,8 +430,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_aypqx")
 script = ExtResource("1_ph7jl")
-metadata/_edit_vertical_guides_ = [1587.0]
+metadata/_edit_vertical_guides_ = [1577.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -438,16 +446,17 @@ color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Panel" type="Panel" parent="."]
 editor_description = "如果漂移到别的地方了，就把x坐标减去窗口长度
-初始位置x:1587"
+初始位置x:1570, y:20"
+material = SubResource("ShaderMaterial_ley2d")
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -333.0
-offset_bottom = 216.0
+offset_left = -350.0
+offset_top = 20.0
+offset_right = -17.0
+offset_bottom = 236.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qe46q")
-metadata/_edit_lock_ = true
 
 [node name="MapControl" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -569,9 +578,9 @@ libraries = {
 "": SubResource("AnimationLibrary_qebfd")
 }
 
-[node name="MapTitle" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="MapTitle" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_um0je")
+layout_mode = 0
 offset_left = 31.0
 offset_top = 48.0
 offset_right = 250.0
