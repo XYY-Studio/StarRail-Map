@@ -1,6 +1,6 @@
 extends Node
 
-@onready var maptexture = $"/root/Main/Map"
+@onready var maptexture = $"/root/Main/Map/Main/"
 
 #func change_to_world(id) -> void:
 	#pass

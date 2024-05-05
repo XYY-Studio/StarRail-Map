@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl2qgjxk3ed"]
+[gd_scene load_steps=8 format=3 uid="uid://dl2qgjxk3ed"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_vkhng"]
 [ext_resource type="Texture2D" uid="uid://16if5rxukqsw" path="res://resource/img/map/101/10101.png" id="2_4kn60"]
 [ext_resource type="PackedScene" uid="uid://dpaf68yo1s2a6" path="res://src/system/setting/setting.tscn" id="2_dqyl4"]
 [ext_resource type="Script" path="res://src/ui/base_ui.gd" id="3_0r7rl"]
 [ext_resource type="PackedScene" uid="uid://cenkshvhr4nk1" path="res://src/ui/map_ui.tscn" id="4_jx5hm"]
+[ext_resource type="PackedScene" uid="uid://uqxm4bsmwgrn" path="res://src/system/marker/scenes/item.tscn" id="5_q6jrh"]
+[ext_resource type="Script" path="res://src/system/marker/marker_manager.gd" id="6_u2sjv"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vkhng")
@@ -19,16 +21,31 @@ script = ExtResource("3_0r7rl")
 
 [node name="MapUi" parent="Ui" groups=["Ui"] instance=ExtResource("4_jx5hm")]
 
-[node name="Point" type="Control" parent="."]
+[node name="Map" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
-[node name="Map" type="TextureRect" parent="."]
+[node name="Main" type="TextureRect" parent="Map"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 472.0
+offset_bottom = 472.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_4kn60")
+stretch_mode = 3
+
+[node name="Marker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_u2sjv")
+
+[node name="Item" parent="Marker" instance=ExtResource("5_q6jrh")]
+visible = false

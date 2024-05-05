@@ -39,10 +39,13 @@ func _set_visible(value: bool) -> void:
 
 func set_frosted_glass(value: bool) -> void:
 	var panel_shader = $Panel.material
+	var map_title_shader = $MapTitle.material
 	if value:
 		panel_shader.set_shader_parameter("lod", 4.0)
+		map_title_shader.set_shader_parameter("lod", 4.0)
 	else:
 		panel_shader.set_shader_parameter("lod", 0.0)
+		map_title_shader.set_shader_parameter("lod", 0.0)
 
 #endregion
 

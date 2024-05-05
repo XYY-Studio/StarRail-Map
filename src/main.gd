@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var world_json_data = Util.get_json_data(FileAccess.open("res://Resource/data/world.json", FileAccess.READ))
-@onready var map_json_data = Util.get_json_data(FileAccess.open("res://Resource/data/map.json", FileAccess.READ))
+@onready var world_json_data = Util.get_json_data(FileAccess.open("res://resource/data/world.json", FileAccess.READ))
+@onready var map_json_data = Util.get_json_data(FileAccess.open("res://resource/data/map.json", FileAccess.READ))
 @onready var Ui = %Ui
 
 func _process(delta) -> void:

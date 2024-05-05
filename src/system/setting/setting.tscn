@@ -18,10 +18,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
 
 [node name="{set_general}" type="VBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Language" type="Control" parent="TabContainer/{set_general}"]
@@ -161,6 +159,7 @@ size_flags_horizontal = 10
 text = "{btn_cheack_update}"
 
 [node name="{set_view}" type="VBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="FullScreen" type="Control" parent="TabContainer/{set_view}"]
