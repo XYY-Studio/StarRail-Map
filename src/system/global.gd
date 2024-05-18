@@ -2,6 +2,7 @@ extends Node
 
 #------------------------
 #region Data
+var build_version :int = 24062
 var map_data :Dictionary
 var world_data :Dictionary
 var floorTemp :Dictionary

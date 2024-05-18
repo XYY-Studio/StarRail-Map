@@ -16,7 +16,7 @@ config/name_localized={
 "zh_CN": "星穹铁道地图"
 }
 config/description="A map application for StarRail"
-config/version="0.1.0"
+config/version="0.1.1"
 run/main_scene="res://src/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60

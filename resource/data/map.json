@@ -332,6 +332,31 @@
 				],
 				"suffix": ".png"
 			},
+			{
+				"id": "40108",
+				"path": "res://resource/img/map/401/",
+				"defaultCameraZoom": 0.4,
+				"multiFloor": true,
+				"floorTemplate": "0",
+				"defaultFloor": "1",
+				"floor": [
+					"40108_1",
+					"40108_2"
+				],
+				"suffix": ".png"
+			},
+			{
+				"id": "40109",
+				"path": "res://resource/img/map/401/40109.png",
+				"defaultCameraZoom": 0.4,
+				"multiFloor": false
+			},
+			{
+				"id": "40110",
+				"path": "res://resource/img/map/401/40110.png",
+				"defaultCameraZoom": 0.8,
+				"multiFloor": false
+			},
 		]
 	}
 }
