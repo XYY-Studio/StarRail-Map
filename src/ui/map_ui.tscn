@@ -432,7 +432,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_aypqx")
 script = ExtResource("1_ph7jl")
-metadata/_edit_vertical_guides_ = [1577.0]
+metadata/_edit_vertical_guides_ = [1570.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

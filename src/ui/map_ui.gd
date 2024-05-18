@@ -152,10 +152,26 @@ func clear_map_option() -> void:
 #region Floor
 
 func show_floor(enable: bool) -> void:
+	var tween
+	var time :float = 0.3
+	var trans := Tween.TRANS_CUBIC
+	
+	var panel := $Panel
+	var floor_box := $Panel/MapControl/FloorSelectBox
+	
+	if floor_option.visible != enable:
+		tween = get_tree().create_tween().set_parallel(true)
+	
 	if enable == true && floor_option.visible == false:
-		floor_anim_player.play("show_floor")
+		#floor_anim_player.play("show_floor")
+		
+		tween.tween_property(panel,"size:y", floor_box.size.y + 5, time).as_relative().set_trans(trans)
+		tween.tween_property(floor_box, "modulate:a", 1, time + 0.1).set_trans(trans)
 	elif enable == false && floor_option.visible == true:
-		floor_anim_player.play("hide_floor")
+		#floor_anim_player.play("hide_floor")
+		
+		tween.tween_property(panel,"size:y", -floor_box.size.y - 5, time).as_relative().set_trans(trans)
+		tween.tween_property(floor_box, "modulate:a", 0, time + 0.1).set_trans(trans)
 	
 	floor_option.set_visible(enable)
 
