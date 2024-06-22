@@ -357,6 +357,20 @@
 				"defaultCameraZoom": 0.8,
 				"multiFloor": false
 			},
+			{
+				"id": "40111",
+				"path": "res://resource/img/map/401/",
+				"defaultCameraZoom": 0.6,
+				"multiFloor": true,
+				"floorTemplate": "2",
+				"defaultFloor": "1",
+				"floor": [					
+					"40111_1",
+					"40111_2",
+					"40111_3"
+				],
+				"suffix": ".png"
+			}
 		]
 	}
 }
