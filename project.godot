@@ -29,6 +29,7 @@ Global="*res://src/system/global.gd"
 MapManager="*res://src/system/map/map_manager.gd"
 Util="*res://src/util/util.gd"
 GlobalUi="*res://src/ui/global_ui.tscn"
+Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 
 [display]
 
@@ -42,7 +43,7 @@ window/per_pixel_transparency/allowed=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg")
 
 [file_customization]
 
