@@ -40,6 +40,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/per_pixel_transparency/allowed=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -60,6 +64,5 @@ locale/translations=PackedStringArray("res://Resource/data/language/i18n.en.tran
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.8, 0.8, 0.8, 1)
