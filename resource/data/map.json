@@ -5,6 +5,7 @@
 		"1": [0, 1],
 		"2": [0, 1, 2],
 		"3": [1, 2, 3],
+		"4": [1, 0, -1, -2, -3]
 	},
 	"map":{
 		"100": [
@@ -243,6 +244,22 @@
 				"defaultCameraZoom": 0.6,
 				"multiFloor": false
 			},
+			{
+				"id": "30111",
+				"path": "res://resource/img/map/301/",
+				"defaultCameraZoom": 0.4,
+				"multiFloor": true,
+				"floorTemplate": "4",
+				"defaultFloor": "0",
+				"floor": [
+					"30111_1",
+					"30111_2",
+					"30111_3",
+					"30111_4",
+					"30111_5"
+				],
+				"suffix": ".png"
+			}
 		],
 		"401": [
 			{
